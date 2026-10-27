@@ -50,3 +50,4 @@ class BaseChunker(ABC):
     def chunk(self, text: str, source_doc: str = "student_handbook.md") -> list[Chunk]:
         """Split text into a sequence of Chunk objects."""
         pass
+

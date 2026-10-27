@@ -62,3 +62,4 @@ class FixedSizeChunker(BaseChunker):
             start += self.step_size
 
         return chunks
+
