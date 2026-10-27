@@ -255,3 +255,4 @@
 1. **Always refer to empirical data**: Quote the exact confidence intervals ($53.33\% [42.86, 61.93]$ for System D vs $18.10\%$ for System A).
 2. **Admit small model limitations openly**: When asked why System B scored low, explain that 1.5B parameters lack the capacity to store 611 dense factual QA pairs without gradient interference.
 3. **Emphasize AST safety**: Highlight that System D uses Python's `ast.parse` rather than `eval()`, preventing code injection vulnerabilities.
+
