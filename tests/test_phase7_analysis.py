@@ -97,3 +97,4 @@ if __name__ == "__main__":
     test_plots_generation()
     test_failure_case_taxonomy()
     print("All Phase 7 tests passed successfully!")
+
