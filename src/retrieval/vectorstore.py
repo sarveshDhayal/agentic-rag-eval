@@ -149,3 +149,4 @@ class FAISSVectorStore:
             self.metric = data.get("metric", "cosine")
             self.dimension = data.get("dimension", self.dimension)
             self.chunks_metadata = data.get("chunks", [])
+

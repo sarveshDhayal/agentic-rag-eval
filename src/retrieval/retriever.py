@@ -97,3 +97,4 @@ class HandbookRetriever:
             context_blocks.append(block)
 
         return "\n".join(context_blocks)
+

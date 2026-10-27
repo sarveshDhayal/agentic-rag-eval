@@ -120,3 +120,4 @@ if __name__ == "__main__":
     test_handbook_retriever_e2e()
     test_retrieval_metrics_results()
     print("All Phase 2 tests passed successfully!")
+
