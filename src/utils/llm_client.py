@@ -224,3 +224,4 @@ class LLMClient:
         p_tok = max(10, len(prompt.split()))
         c_tok = max(15, len(text.split()))
         return text, p_tok, c_tok
+

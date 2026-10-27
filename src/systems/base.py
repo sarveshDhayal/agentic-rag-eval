@@ -52,3 +52,4 @@ class BaseSystem(ABC):
         Processes a student query and returns a standardized SystemResponse.
         """
         pass
+

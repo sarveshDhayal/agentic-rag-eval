@@ -141,3 +141,4 @@ class LLMCache:
         with self._get_connection() as conn:
             conn.execute("DELETE FROM completions")
             conn.commit()
+

@@ -79,3 +79,4 @@ if __name__ == "__main__":
     print("Query:", res.query)
     print("Response:", res.response)
     print(f"Latency: {res.latency_seconds:.3f}s | Tokens: {res.total_tokens} | Cache hit: {res.metadata.get('cache_hit')}")
+

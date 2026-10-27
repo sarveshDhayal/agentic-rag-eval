@@ -1,0 +1,21 @@
+{
+  "query": "Since the Director has power to condone attendance down to 50%, what form do I submit?",
+  "iterations_used": 1,
+  "max_iterations_allowed": 4,
+  "is_abstaining": true,
+  "latency_seconds": 0.0006,
+  "total_tokens": 25,
+  "retrieved_chunks_count": 0,
+  "calculation_results": [],
+  "tool_history": [
+    {
+      "step": 1,
+      "thought": "Abstention triggered: Question contains a false premise contradicted by official regulations."
+    },
+    {
+      "step": 1,
+      "event": "Explicit abstention executed"
+    }
+  ],
+  "final_answer": "False premise. Under Section 3.3, under no circumstances may any authority, including the Director or Academic Council, condone attendance below 60.0%."
+}

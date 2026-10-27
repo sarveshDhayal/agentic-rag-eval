@@ -117,3 +117,4 @@ if __name__ == "__main__":
     print(f"\nRetrieved Chunks: {len(res.retrieved_chunks)}")
     for c in res.retrieved_chunks:
         print(f"  - [{c['score']:.4f}] {c['section_title']}")
+
