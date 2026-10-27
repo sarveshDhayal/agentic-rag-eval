@@ -87,3 +87,4 @@ if __name__ == "__main__":
     print(f"  Embedding: {cfg['embedding']['model_name']}")
     print(f"  Generator: {cfg['llm']['generator']['model']}")
     print(f"  Judge:     {cfg['llm']['judge']['model']}")
+

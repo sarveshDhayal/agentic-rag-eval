@@ -175,3 +175,4 @@ sequenceDiagram
 2. **Deterministic Calculator Tool**: LLMs consistently struggle with multi-tier fee penalties and date differences. The ReAct agent delegates all arithmetic to a sandboxed Python execution tool.
 3. **Explicit Abstention Gate**: Rather than forcing a hallucinated answer when a query lies outside the handbook, System D includes an explicit decision node to abstain gracefully.
 4. **Transparent SQLite LLM Cache**: Prevents duplicate API calls during repeated metric runs, ensuring rate limits are preserved and latency measurements remain reproducible.
+

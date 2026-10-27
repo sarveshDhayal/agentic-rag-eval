@@ -35,3 +35,4 @@ This document provides an explicit mapping between the engineering components de
 | **Dense Embeddings & Retrieval** | How does BGE-small map text into semantic space? Why does Section-Aware chunking outperform Fixed-Size chunking on tabular data? | `src/chunking/` & `results/plots/chunking_ablation.png` |
 | **Agentic State Machines** | Why use LangGraph over sequential chains? How do conditional edges and recursion limits prevent infinite reasoning loops? | `src/systems/system_d_agentic.py` & `docs/architecture.md` |
 | **Hallucination Evaluation** | How is faithfulness mathematically separated from answer correctness? Why must the judge LLM differ from the generator? | `src/evaluation/eval_harness.py` |
+
