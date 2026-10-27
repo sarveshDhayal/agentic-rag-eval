@@ -1,0 +1,124 @@
+# ==============================================================================
+# Master Configuration for Agentic RAG Evaluation Project
+# Reproducible research setup with fixed random seed and explicit hyper-parameters
+# ==============================================================================
+
+project:
+  name: "agentic-rag-eval"
+  title: "Agentic RAG with Evaluation Harness: Prompting vs Fine-tuning vs RAG"
+  seed: 42
+  version: "1.0.0"
+
+paths:
+  raw_handbook: "data/raw/student_handbook.md"
+  golden_eval: "data/eval/golden_eval_set.json"
+  train_data: "data/processed/train_qa_pairs.jsonl"
+  leakage_report: "results/leakage_report.json"
+  vectorstore_dir: "data/vectorstore"
+  results_dir: "results"
+  eval_results_csv: "results/eval_results.csv"
+  eval_summary_json: "results/eval_summary.json"
+  plots_dir: "results/plots"
+  traces_dir: "results/traces"
+  llm_cache: "results/.llm_cache.sqlite"
+
+# Embedding Model (Sentence Transformers)
+embedding:
+  model_name: "BAAI/bge-small-en-v1.5"
+  dimension: 384
+  device: "cpu" # 'cpu', 'cuda', or 'mps'
+  batch_size: 32
+  normalize_embeddings: true
+
+# Document Chunking Strategies
+chunking:
+  default_strategy: "section_aware" # 'section_aware' or 'fixed_size'
+  fixed_size:
+    chunk_size: 500
+    chunk_overlap: 50
+  section_aware:
+    split_headers:
+      - ["#", "Document Title"]
+      - ["##", "Chapter"]
+      - ["###", "Section"]
+    preserve_tables: true
+    min_chunk_length: 50
+    max_chunk_length: 1200
+
+# Vector Store Settings
+vectorstore:
+  backend: "faiss" # 'faiss' or 'chromadb'
+  metric: "cosine"
+  index_name: "handbook_index"
+
+# Retrieval Hyperparameters
+retrieval:
+  top_k: 3
+  similarity_threshold: 0.35
+
+# LLM Configurations
+llm:
+  # Primary Generator for Systems A, C, and D
+  generator:
+    provider: "groq" # 'groq' or 'gemini'
+    model: "llama-3.1-8b-instant"
+    fallback_model: "gemini-1.5-flash"
+    temperature: 0.1
+    max_tokens: 512
+    timeout_seconds: 30
+    max_retries: 3
+    retry_min_wait: 2
+    retry_max_wait: 10
+
+  # Independent Judge LLM for Evaluation Harness (Must be distinct from Generator)
+  judge:
+    provider: "gemini" # 'gemini' or 'groq'
+    model: "gemini-1.5-flash"
+    fallback_model: "llama-3.3-70b-versatile"
+    temperature: 0.0
+    max_tokens: 512
+    timeout_seconds: 30
+    max_retries: 3
+    retry_min_wait: 2
+    retry_max_wait: 10
+
+  # System B: Fine-Tuned Model Specifications (Trained on Colab T4)
+  fine_tuned:
+    base_model: "Qwen/Qwen2.5-1.5B-Instruct" # Alternative: meta-llama/Llama-3.2-1B-Instruct
+    adapter_path: "adapters/qlora_handbook_adapter"
+    lora_r: 16
+    lora_alpha: 32
+    lora_dropout: 0.05
+    target_modules: ["q_proj", "k_proj", "v_proj", "o_proj"]
+    load_in_4bit: true
+
+# System D: Agentic RAG Configuration (LangGraph ReAct)
+agent:
+  max_iterations: 4
+  enabled_tools:
+    - "handbook_retriever"
+    - "query_rewriter"
+    - "calculator"
+    - "answer_or_abstain"
+  log_traces: true
+
+# Evaluation Harness Parameters
+evaluation:
+  smoke_test_size: 5
+  bootstrap_samples: 1000
+  confidence_interval: 0.95
+  categories:
+    - "simple_factual"
+    - "multi_hop"
+    - "numeric_calculation"
+    - "out_of_scope"
+    - "adversarial"
+  metrics:
+    - "faithfulness"
+    - "hallucination_rate"
+    - "answer_correctness"
+    - "context_precision"
+    - "context_recall"
+    - "abstention_accuracy"
+    - "latency_seconds"
+    - "token_count"

@@ -1,0 +1,41 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environments and dependencies
+.venv/
+env/
+venv/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# Secret credentials (CRITICAL: never commit API keys)
+.env
+.env.local
+*.key
+*.pem
+
+# Data and artifacts (keep raw text, ignore large vector indexes / weights)
+data/vectorstore/*
+!data/vectorstore/.gitkeep
+data/processed/*.pt
+data/processed/*.bin
+models/
+adapters/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
