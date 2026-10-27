@@ -1,0 +1,54 @@
+{
+  "timestamp": "2026-10-27 20:25:45",
+  "chunking_strategy_ablation": {
+    "section_aware": {
+      "hit@1": 0.8571,
+      "hit@3": 0.9714,
+      "hit@5": 0.9857,
+      "mrr": 0.9179
+    },
+    "fixed_size": {
+      "hit@1": 0.6857,
+      "hit@3": 0.8857,
+      "hit@5": 0.9857,
+      "mrr": 0.8029
+    },
+    "hit@1_delta": 0.1714,
+    "mrr_delta": 0.115
+  },
+  "top_k_parameter_sweep": {
+    "k_2": {
+      "top_k": 2,
+      "evaluated_queries": 15,
+      "answer_correctness": 0.9333,
+      "mean_token_usage": 500.9,
+      "mean_latency_seconds": 0.008
+    },
+    "k_4": {
+      "top_k": 4,
+      "evaluated_queries": 15,
+      "answer_correctness": 0.9333,
+      "mean_token_usage": 905.1,
+      "mean_latency_seconds": 0.008
+    },
+    "k_8": {
+      "top_k": 8,
+      "evaluated_queries": 15,
+      "answer_correctness": 0.9333,
+      "mean_token_usage": 1760.7,
+      "mean_latency_seconds": 0.008
+    }
+  },
+  "query_rewriter_component_ablation": {
+    "multi_hop_queries_evaluated": 10,
+    "with_query_rewriter": {
+      "answer_correctness": 0.7,
+      "mean_tokens": 602.2
+    },
+    "without_query_rewriter": {
+      "answer_correctness": 0.7,
+      "mean_tokens": 602.2
+    },
+    "delta_accuracy": 0.0
+  }
+}
