@@ -1,0 +1,67 @@
+{
+  "benchmark_summary": {
+    "section_aware": {
+      "strategy": "section_aware",
+      "evaluated_queries": 70,
+      "mrr": 0.9179,
+      "hit@1": 0.8571,
+      "hit@1_count": 60,
+      "hit@3": 0.9714,
+      "hit@3_count": 68,
+      "hit@5": 0.9857,
+      "hit@5_count": 69,
+      "per_category_breakdown": {
+        "simple_factual": {
+          "total": 25,
+          "hit_at_1": 22,
+          "hit_at_3": 24,
+          "hit_at_5": 24
+        },
+        "multi_hop": {
+          "total": 25,
+          "hit_at_1": 21,
+          "hit_at_3": 24,
+          "hit_at_5": 25
+        },
+        "numeric_calculation": {
+          "total": 20,
+          "hit_at_1": 17,
+          "hit_at_3": 20,
+          "hit_at_5": 20
+        }
+      }
+    },
+    "fixed_size": {
+      "strategy": "fixed_size",
+      "evaluated_queries": 70,
+      "mrr": 0.8029,
+      "hit@1": 0.6857,
+      "hit@1_count": 48,
+      "hit@3": 0.8857,
+      "hit@3_count": 62,
+      "hit@5": 0.9857,
+      "hit@5_count": 69,
+      "per_category_breakdown": {
+        "simple_factual": {
+          "total": 25,
+          "hit_at_1": 18,
+          "hit_at_3": 23,
+          "hit_at_5": 24
+        },
+        "multi_hop": {
+          "total": 25,
+          "hit_at_1": 16,
+          "hit_at_3": 21,
+          "hit_at_5": 25
+        },
+        "numeric_calculation": {
+          "total": 20,
+          "hit_at_1": 14,
+          "hit_at_3": 18,
+          "hit_at_5": 20
+        }
+      }
+    }
+  },
+  "conclusion": "Section-Aware chunking delivers superior Hit@K and MRR because hierarchical context breadcrumbs and preserved tables prevent fragmentation of critical numerical policies."
+}

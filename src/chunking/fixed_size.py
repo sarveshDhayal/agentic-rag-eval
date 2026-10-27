@@ -5,6 +5,7 @@ Standard baseline chunking strategy commonly used in simple RAG pipelines.
 
 from __future__ import annotations
 
+import re
 from typing import Any, Dict
 from src.chunking.base import BaseChunker, Chunk
 
@@ -38,18 +39,24 @@ class FixedSizeChunker(BaseChunker):
             chunk_slice = text[start:end].strip()
             
             if chunk_slice:
+                # Resolve active section based on nearest preceding section header in the document
+                preceding = text[:end]
+                matches = re.findall(r"(###?\s+Section\s+[\d\.]+[^\n]*)", preceding)
+                sec_title = matches[-1].lstrip("#").strip() if matches else f"Offset_{start}_{end}"
+
                 chunk_id = f"fixed_{idx:04d}"
                 metadata: Dict[str, Any] = {
                     "source_doc": source_doc,
                     "start_char": start,
                     "end_char": end,
                     "chunk_index": idx,
+                    "section": sec_title,
                 }
                 chunks.append(
                     Chunk(
                         chunk_id=chunk_id,
                         text=chunk_slice,
-                        section_title=f"Offset_{start}_{end}",
+                        section_title=sec_title,
                         strategy="fixed_size",
                         char_count=len(chunk_slice),
                         metadata=metadata,
