@@ -29,6 +29,8 @@ data/processed/*.pt
 data/processed/*.bin
 models/
 adapters/
+*.sqlite
+results/.llm_cache.sqlite
 
 # OS-specific
 .DS_Store

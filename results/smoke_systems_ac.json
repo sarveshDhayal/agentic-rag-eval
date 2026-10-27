@@ -1,0 +1,407 @@
+[
+  {
+    "id": "eval_001",
+    "category": "simple_factual",
+    "question": "What is the minimum physical attendance percentage required in each registered course to be eligible for End-Semester Examinations?",
+    "ground_truth": "A student must maintain an aggregate physical attendance of at least 75.0% in each individual registered course.",
+    "system_a": {
+      "system_name": "System A (Prompting Baseline)",
+      "query": "What is the minimum physical attendance percentage required in each registered course to be eligible for End-Semester Examinations?",
+      "response": "According to the Apex Institute of Technology academic code, students must adhere to standard academic requirements.",
+      "retrieved_chunks": [],
+      "latency_seconds": 0.0,
+      "prompt_tokens": 18,
+      "completion_tokens": 16,
+      "total_tokens": 34,
+      "metadata": {
+        "provider": "groq",
+        "model": "llama-3.1-8b-instant",
+        "cache_hit": false
+      }
+    },
+    "system_c": {
+      "system_name": "System C (Basic RAG)",
+      "query": "What is the minimum physical attendance percentage required in each registered course to be eligible for End-Semester Examinations?",
+      "response": "Under Section 3.2, medical attendance condonation between 65.0% and 74.9% requires submitting Form M-2 signed by the Chief Medical Officer within 7 days and a fee of \u20b91,500 per course (capped at \u20b95,000 per semester).",
+      "retrieved_chunks": [
+        {
+          "chunk_id": "sec_0007",
+          "text": "[CHAPTER 3: ATTENDANCE RULES, LEAVE REGULATIONS, AND CONDONATION > Section 3.1: Minimum Attendance Mandate]\nAt AIT, regular attendance in all scheduled instructional classes (lectures, tutorials, and laboratory practical sessions) is a mandatory condition precedent for appearing in the End-Semester Examination (ESE).\n\n1. **Mandatory Minimum Attendance Floor**: A student must maintain an aggregate physical attendance of at least **75.0%** in each individual registered course.\n2. **Attendance Calculation Formula**:\n   $$\\text{Attendance Percentage } (\\%) = \\left( \\frac{\\text{Total Contact Hours Attended by Student}}{\\text{Total Scheduled Contact Hours Conducted by Instructor}} \\right) \\times 100$$\n3. Attendance is captured digitally at the start of each lecture using RFID door readers and verified by the course instructor on the SIP portal. Any discrepancy must be reported in writing to the Head of Department (HoD) within 3 working days of occurrence.",
+          "score": 0.7729,
+          "section_title": "CHAPTER 3: ATTENDANCE RULES, LEAVE REGULATIONS, AND CONDONATION - Section 3.1: Minimum Attendance Mandate",
+          "metadata": {
+            "source_doc": "student_handbook.md",
+            "doc_title": "APEX INSTITUTE OF TECHNOLOGY",
+            "chapter": "CHAPTER 3: ATTENDANCE RULES, LEAVE REGULATIONS, AND CONDONATION",
+            "section": "Section 3.1: Minimum Attendance Mandate",
+            "has_table": false,
+            "sub_index": 0
+          }
+        },
+        {
+          "chunk_id": "sec_0028",
+          "text": "[CHAPTER 10: FAST-TRACK SUMMARY TABLE OF FREQUENTLY CONSULTED POLICIES > CHAPTER 10: FAST-TRACK SUMMARY TABLE OF FREQUENTLY CONSULTED POLICIES]\nFor quick administrative reference by faculty advisors and students, key numerical policies are summarized below:\n\n| Policy Area | Core Rule / Quantitative Metric | Governing Section |\n| :--- | :--- | :--- |\n| **Minimum Passing Marks** | 40% combined score (CIE + SEE) | Section 4.2 |\n| **Minimum Required Attendance** | 75.0% aggregate per course | Section 3.1 |\n| **Medical Condonation Threshold** | 65.0% to 74.9% (Form M-2 + \u20b91,500/course) | Section 3.2 |\n| **Hard Absolute Minimum Attendance** | 60.0% (Zero condonation allowed below this) | Section 3.3 |\n| **Late Course Registration Penalty** | Days 1-5: \u20b91,000; Days 6-10: \u20b92,500; Day 11+: Prohibited | Section 2.2 |\n| **Semester Fee Due Dates** | Autumn: July 15 (5 PM); Spring: Dec 15 (5 PM) | Section 5.2 |\n| **De-registration for Non-Payment** | Automatic on Day 31 past due date (+ \u20b910,000 re-admission fee) | Section 5.2 |\n| **Weekday Hostel Curfew** | 9:30 PM (3 Grace Late Slips per semester) | Section 6.3 |\n| **Weekend Hostel Curfew** | 10:30 PM | Section 6.3 |\n| **Mess Dining Rebate** | \u20b9120/day (Min 4 continuous days, max 20 days/semester) | Section 6.2 |\n| **Turnitin Plagiarism Ceiling** | 10.0% similarity for viva clearance | Section 9.1 |\n| **Re-Evaluation Mark Delta Rule** | Mark change accepted only if revised $-$ original $\\ge 5.0$ marks | Section 4.4 |\n| **Book Borrowing Duration & Limit** | 4 books for 14 calendar days (Overdue: \u20b95/day, then \u20b910/day) | Section 8.1 |\n| **Total B.Tech Graduation Credits** | Minimum 160.0 Credits with CGPA $\\ge 5.00$ | Section 2.1 |\n\n---\n*End of Official Student Handbook \u2014 Apex Institute of Technology.*",
+          "score": 0.7285,
+          "section_title": "CHAPTER 10: FAST-TRACK SUMMARY TABLE OF FREQUENTLY CONSULTED POLICIES - CHAPTER 10: FAST-TRACK SUMMARY TABLE OF FREQUENTLY CONSULTED POLICIES",
+          "metadata": {
+            "source_doc": "student_handbook.md",
+            "doc_title": "APEX INSTITUTE OF TECHNOLOGY",
+            "chapter": "CHAPTER 10: FAST-TRACK SUMMARY TABLE OF FREQUENTLY CONSULTED POLICIES",
+            "section": "CHAPTER 10: FAST-TRACK SUMMARY TABLE OF FREQUENTLY CONSULTED POLICIES",
+            "has_table": true,
+            "sub_index": 0
+          }
+        },
+        {
+          "chunk_id": "sec_0011",
+          "text": "[CHAPTER 4: ASSESSMENT FRAMEWORK, EXAMINATION SCHEME, AND GRADING > Section 4.2: 10-Point Absolute Letter Grading System]\nThe final marks obtained in a course ($Marks = \\text{CIE} + \\text{SEE}$, out of 100) are converted into letter grades using an absolute scale, unless the Academic Council mandates a normalized relative curve for large cohort courses ($> 300$ students).\n\n| Letter Grade | Performance Descriptor | Grade Points ($G$) | Percentage Marks Range | Remarks |\n| :--- | :--- | :--- | :--- | :--- |\n| **O** | Outstanding | 10.0 | $\\ge 90$ | Top-tier academic mastery |\n| **A+** | Excellent | 9.0 | $80 - 89$ | High analytical capability |\n| **A** | Very Good | 8.0 | $70 - 79$ | Thorough conceptual understanding |\n| **B+** | Good | 7.0 | $60 - 69$ | Above average proficiency |\n| **B** | Above Average | 6.0 | $50 - 59$ | Basic competent proficiency |\n| **C** | Average / Pass Floor | 5.0 | $40 - 49$ | Minimum passing grade for individual course |\n| **F** | Fail | 0.0 | $< 40$ | Backlog; must appear in Supplementary Exam |\n| **W** | Withdrawn (Shortage) | 0.0 | Shortage $< 60\\%$ | Must repeat whole course with attendance |\n| **I** | Incomplete | 0.0 | Authorized absence | MSE/SEE missed due to verified medical cause |",
+          "score": 0.7046,
+          "section_title": "CHAPTER 4: ASSESSMENT FRAMEWORK, EXAMINATION SCHEME, AND GRADING - Section 4.2: 10-Point Absolute Letter Grading System",
+          "metadata": {
+            "source_doc": "student_handbook.md",
+            "doc_title": "APEX INSTITUTE OF TECHNOLOGY",
+            "chapter": "CHAPTER 4: ASSESSMENT FRAMEWORK, EXAMINATION SCHEME, AND GRADING",
+            "section": "Section 4.2: 10-Point Absolute Letter Grading System",
+            "has_table": true,
+            "sub_index": 0
+          }
+        }
+      ],
+      "latency_seconds": 0.0,
+      "prompt_tokens": 760,
+      "completion_tokens": 35,
+      "total_tokens": 795,
+      "metadata": {
+        "provider": "groq",
+        "model": "llama-3.1-8b-instant",
+        "cache_hit": false,
+        "top_k": 3,
+        "chunking_strategy": "section_aware"
+      }
+    }
+  },
+  {
+    "id": "eval_026",
+    "category": "multi_hop",
+    "question": "If a student wants to graduate with First Class with Distinction, what are the minimum CGPA and historical backlog conditions required?",
+    "ground_truth": "The student must maintain a CGPA of >= 8.50, complete the degree within exactly 8 consecutive semesters, and have zero historical backlog grades ('F' or 'W').",
+    "system_a": {
+      "system_name": "System A (Prompting Baseline)",
+      "query": "If a student wants to graduate with First Class with Distinction, what are the minimum CGPA and historical backlog conditions required?",
+      "response": "According to the Apex Institute of Technology academic code, students must adhere to standard academic requirements.",
+      "retrieved_chunks": [],
+      "latency_seconds": 0.0,
+      "prompt_tokens": 21,
+      "completion_tokens": 16,
+      "total_tokens": 37,
+      "metadata": {
+        "provider": "groq",
+        "model": "llama-3.1-8b-instant",
+        "cache_hit": false
+      }
+    },
+    "system_c": {
+      "system_name": "System C (Basic RAG)",
+      "query": "If a student wants to graduate with First Class with Distinction, what are the minimum CGPA and historical backlog conditions required?",
+      "response": "Under Section 5.1 and 5.2, Autumn semester fee is \u20b91,20,500 due on July 15th by 5:00 PM. Delayed payment incurs late fines.",
+      "retrieved_chunks": [
+        {
+          "chunk_id": "sec_0023",
+          "text": "[CHAPTER 7: SCHOLARSHIPS, FINANCIAL ASSISTANCE, AND ENDOWMENTS > Section 7.4: Scholarship Retention and Revocation Rules]\n1. A scholarship recipient who gets placed on Academic Probation (CGPA $< 6.50$ in any subsequent semester) shall have their scholarship **suspended immediately** for the following semester.\n2. If the student restores their CGPA to the required threshold in the next consecutive semester, the scholarship is reinstated (without retroactive arrears).\n3. Any student found guilty of an act of indiscipline, cheating in examinations, or ragging shall forfeit all institutional scholarships permanently and must refund all disbursed funds within 30 days.\n\n---",
+          "score": 0.7077,
+          "section_title": "CHAPTER 7: SCHOLARSHIPS, FINANCIAL ASSISTANCE, AND ENDOWMENTS - Section 7.4: Scholarship Retention and Revocation Rules",
+          "metadata": {
+            "source_doc": "student_handbook.md",
+            "doc_title": "APEX INSTITUTE OF TECHNOLOGY",
+            "chapter": "CHAPTER 7: SCHOLARSHIPS, FINANCIAL ASSISTANCE, AND ENDOWMENTS",
+            "section": "Section 7.4: Scholarship Retention and Revocation Rules",
+            "has_table": false,
+            "sub_index": 0
+          }
+        },
+        {
+          "chunk_id": "sec_0012",
+          "text": "[CHAPTER 4: ASSESSMENT FRAMEWORK, EXAMINATION SCHEME, AND GRADING > Section 4.3: Computation of SGPA and CGPA]\nThe Semester Grade Point Average (SGPA) and Cumulative Grade Point Average (CGPA) evaluate the student's academic standing:\n\n$$\\text{SGPA} = \\frac{\\sum_{i=1}^{n} (C_i \\times G_i)}{\\sum_{i=1}^{n} C_i}$$\nwhere $C_i$ denotes the registered credits of course $i$, and $G_i$ represents the numeric grade points obtained in course $i$.\n\nThe Cumulative Grade Point Average (CGPA) is computed across all accumulated semesters:\n$$\\text{CGPA} = \\frac{\\sum_{j=1}^{m} (C_j \\times G_j)}{\\sum_{j=1}^{m} C_j}$$\nwhere $m$ denotes the total number of all credit-bearing courses completed since matriculation.\n\n**Degree Classification Standards**:\n- **First Class with Distinction**: CGPA $\\ge 8.50$, completed within exactly 8 consecutive semesters without any historical backlog grade (\"F\" or \"W\").\n- **First Class**: CGPA $\\ge 6.75$ and $< 8.50$.\n- **Second Class**: CGPA $\\ge 5.00$ and $< 6.75$.\n- **Academic Ineligibility**: If a student's CGPA drops below 4.50 at the end of the second academic year (4th semester), the student is issued a terminal show-cause notice and placed on a 1-year academic cool-off period.",
+          "score": 0.7069,
+          "section_title": "CHAPTER 4: ASSESSMENT FRAMEWORK, EXAMINATION SCHEME, AND GRADING - Section 4.3: Computation of SGPA and CGPA",
+          "metadata": {
+            "source_doc": "student_handbook.md",
+            "doc_title": "APEX INSTITUTE OF TECHNOLOGY",
+            "chapter": "CHAPTER 4: ASSESSMENT FRAMEWORK, EXAMINATION SCHEME, AND GRADING",
+            "section": "Section 4.3: Computation of SGPA and CGPA",
+            "has_table": false,
+            "sub_index": 0
+          }
+        },
+        {
+          "chunk_id": "sec_0005",
+          "text": "[CHAPTER 2: ACADEMIC CALENDAR, COURSE REGISTRATION, AND CREDIT SCHEME > Section 2.2: Course Registration Guidelines and Credit Limits]\n1. **Pre-Registration Window**: Every student must complete online course registration through the SIP portal within the scheduled 7-calendar-day pre-registration window announced in the Institute Academic Calendar.\n2. **Normal Credit Load**: The standard allowable semester credit load is between 18.0 and 24.0 credits per regular semester.\n3. **Credit Overload**: A student who has obtained a CGPA of $\\ge 8.50$ without any backlog in the preceding two semesters may petition the Dean of Academic Affairs to register for one additional course up to a ceiling of 28.0 credits.\n4. **Credit Underload**: A student placed on Academic Probation (CGPA $< 5.00$) may be restricted by the Department Academic Committee (DAC) to a reduced credit load of between 12.0 and 16.0 credits to facilitate remedial progression.\n5. **Late Registration Fine**: Course registration completed after the designated deadline, but within the subsequent 5 working days, shall incur a mandatory late registration fee of \u20b91,000. Registration submitted between the 6th and 10th working day shall incur a late fee of \u20b92,500. Under no circumstances is registration permitted after the 10th working day from the semester commencement date.\n6. **Course Add/Drop Period**: Students may drop or add an elective course within 10 calendar days of the start of classes, provided the final registered credits remain within the prescribed 18.0 to 24.0 credit boundaries. Core courses cannot be dropped.",
+          "score": 0.6811,
+          "section_title": "CHAPTER 2: ACADEMIC CALENDAR, COURSE REGISTRATION, AND CREDIT SCHEME - Section 2.2: Course Registration Guidelines and Credit Limits",
+          "metadata": {
+            "source_doc": "student_handbook.md",
+            "doc_title": "APEX INSTITUTE OF TECHNOLOGY",
+            "chapter": "CHAPTER 2: ACADEMIC CALENDAR, COURSE REGISTRATION, AND CREDIT SCHEME",
+            "section": "Section 2.2: Course Registration Guidelines and Credit Limits",
+            "has_table": false,
+            "sub_index": 0
+          }
+        }
+      ],
+      "latency_seconds": 0.0,
+      "prompt_tokens": 600,
+      "completion_tokens": 22,
+      "total_tokens": 622,
+      "metadata": {
+        "provider": "groq",
+        "model": "llama-3.1-8b-instant",
+        "cache_hit": false,
+        "top_k": 3,
+        "chunking_strategy": "section_aware"
+      }
+    }
+  },
+  {
+    "id": "eval_051",
+    "category": "numeric_calculation",
+    "question": "If a course has 60 scheduled contact hours, what is the minimum number of hours a student must attend to meet the 75% attendance floor?",
+    "ground_truth": "A student must attend at least 45 hours (0.75 * 60 = 45 hours).",
+    "system_a": {
+      "system_name": "System A (Prompting Baseline)",
+      "query": "If a course has 60 scheduled contact hours, what is the minimum number of hours a student must attend to meet the 75% attendance floor?",
+      "response": "According to the Apex Institute of Technology academic code, students must adhere to standard academic requirements.",
+      "retrieved_chunks": [],
+      "latency_seconds": 0.0,
+      "prompt_tokens": 25,
+      "completion_tokens": 16,
+      "total_tokens": 41,
+      "metadata": {
+        "provider": "groq",
+        "model": "llama-3.1-8b-instant",
+        "cache_hit": false
+      }
+    },
+    "system_c": {
+      "system_name": "System C (Basic RAG)",
+      "query": "If a course has 60 scheduled contact hours, what is the minimum number of hours a student must attend to meet the 75% attendance floor?",
+      "response": "Under Section 3.2, medical attendance condonation between 65.0% and 74.9% requires submitting Form M-2 signed by the Chief Medical Officer within 7 days and a fee of \u20b91,500 per course (capped at \u20b95,000 per semester).",
+      "retrieved_chunks": [
+        {
+          "chunk_id": "sec_0007",
+          "text": "[CHAPTER 3: ATTENDANCE RULES, LEAVE REGULATIONS, AND CONDONATION > Section 3.1: Minimum Attendance Mandate]\nAt AIT, regular attendance in all scheduled instructional classes (lectures, tutorials, and laboratory practical sessions) is a mandatory condition precedent for appearing in the End-Semester Examination (ESE).\n\n1. **Mandatory Minimum Attendance Floor**: A student must maintain an aggregate physical attendance of at least **75.0%** in each individual registered course.\n2. **Attendance Calculation Formula**:\n   $$\\text{Attendance Percentage } (\\%) = \\left( \\frac{\\text{Total Contact Hours Attended by Student}}{\\text{Total Scheduled Contact Hours Conducted by Instructor}} \\right) \\times 100$$\n3. Attendance is captured digitally at the start of each lecture using RFID door readers and verified by the course instructor on the SIP portal. Any discrepancy must be reported in writing to the Head of Department (HoD) within 3 working days of occurrence.",
+          "score": 0.7265,
+          "section_title": "CHAPTER 3: ATTENDANCE RULES, LEAVE REGULATIONS, AND CONDONATION - Section 3.1: Minimum Attendance Mandate",
+          "metadata": {
+            "source_doc": "student_handbook.md",
+            "doc_title": "APEX INSTITUTE OF TECHNOLOGY",
+            "chapter": "CHAPTER 3: ATTENDANCE RULES, LEAVE REGULATIONS, AND CONDONATION",
+            "section": "Section 3.1: Minimum Attendance Mandate",
+            "has_table": false,
+            "sub_index": 0
+          }
+        },
+        {
+          "chunk_id": "sec_0009",
+          "text": "[CHAPTER 3: ATTENDANCE RULES, LEAVE REGULATIONS, AND CONDONATION > Section 3.3: Strict Condonation Exceptions and Disclaimers]\n1. Under **no circumstances** may any authority, including the Director or Academic Council, condone an attendance falling below 60.0%, regardless of the medical or personal justification presented.\n2. Submitting forged or backdated medical certificates to claim condonation will result in an immediate referral to the Institute Discipline Committee, automatic award of an \"F\" grade in all registered courses for that semester, and a suspension of two semesters.\n3. Maternity Leave for eligible married students is admissible up to 45 continuous calendar days upon formal medical documentation, with credit pause provisions.\n\n---",
+          "score": 0.6485,
+          "section_title": "CHAPTER 3: ATTENDANCE RULES, LEAVE REGULATIONS, AND CONDONATION - Section 3.3: Strict Condonation Exceptions and Disclaimers",
+          "metadata": {
+            "source_doc": "student_handbook.md",
+            "doc_title": "APEX INSTITUTE OF TECHNOLOGY",
+            "chapter": "CHAPTER 3: ATTENDANCE RULES, LEAVE REGULATIONS, AND CONDONATION",
+            "section": "Section 3.3: Strict Condonation Exceptions and Disclaimers",
+            "has_table": false,
+            "sub_index": 0
+          }
+        },
+        {
+          "chunk_id": "sec_0028",
+          "text": "[CHAPTER 10: FAST-TRACK SUMMARY TABLE OF FREQUENTLY CONSULTED POLICIES > CHAPTER 10: FAST-TRACK SUMMARY TABLE OF FREQUENTLY CONSULTED POLICIES]\nFor quick administrative reference by faculty advisors and students, key numerical policies are summarized below:\n\n| Policy Area | Core Rule / Quantitative Metric | Governing Section |\n| :--- | :--- | :--- |\n| **Minimum Passing Marks** | 40% combined score (CIE + SEE) | Section 4.2 |\n| **Minimum Required Attendance** | 75.0% aggregate per course | Section 3.1 |\n| **Medical Condonation Threshold** | 65.0% to 74.9% (Form M-2 + \u20b91,500/course) | Section 3.2 |\n| **Hard Absolute Minimum Attendance** | 60.0% (Zero condonation allowed below this) | Section 3.3 |\n| **Late Course Registration Penalty** | Days 1-5: \u20b91,000; Days 6-10: \u20b92,500; Day 11+: Prohibited | Section 2.2 |\n| **Semester Fee Due Dates** | Autumn: July 15 (5 PM); Spring: Dec 15 (5 PM) | Section 5.2 |\n| **De-registration for Non-Payment** | Automatic on Day 31 past due date (+ \u20b910,000 re-admission fee) | Section 5.2 |\n| **Weekday Hostel Curfew** | 9:30 PM (3 Grace Late Slips per semester) | Section 6.3 |\n| **Weekend Hostel Curfew** | 10:30 PM | Section 6.3 |\n| **Mess Dining Rebate** | \u20b9120/day (Min 4 continuous days, max 20 days/semester) | Section 6.2 |\n| **Turnitin Plagiarism Ceiling** | 10.0% similarity for viva clearance | Section 9.1 |\n| **Re-Evaluation Mark Delta Rule** | Mark change accepted only if revised $-$ original $\\ge 5.0$ marks | Section 4.4 |\n| **Book Borrowing Duration & Limit** | 4 books for 14 calendar days (Overdue: \u20b95/day, then \u20b910/day) | Section 8.1 |\n| **Total B.Tech Graduation Credits** | Minimum 160.0 Credits with CGPA $\\ge 5.00$ | Section 2.1 |\n\n---\n*End of Official Student Handbook \u2014 Apex Institute of Technology.*",
+          "score": 0.6281,
+          "section_title": "CHAPTER 10: FAST-TRACK SUMMARY TABLE OF FREQUENTLY CONSULTED POLICIES - CHAPTER 10: FAST-TRACK SUMMARY TABLE OF FREQUENTLY CONSULTED POLICIES",
+          "metadata": {
+            "source_doc": "student_handbook.md",
+            "doc_title": "APEX INSTITUTE OF TECHNOLOGY",
+            "chapter": "CHAPTER 10: FAST-TRACK SUMMARY TABLE OF FREQUENTLY CONSULTED POLICIES",
+            "section": "CHAPTER 10: FAST-TRACK SUMMARY TABLE OF FREQUENTLY CONSULTED POLICIES",
+            "has_table": true,
+            "sub_index": 0
+          }
+        }
+      ],
+      "latency_seconds": 0.0,
+      "prompt_tokens": 639,
+      "completion_tokens": 35,
+      "total_tokens": 674,
+      "metadata": {
+        "provider": "groq",
+        "model": "llama-3.1-8b-instant",
+        "cache_hit": false,
+        "top_k": 3,
+        "chunking_strategy": "section_aware"
+      }
+    }
+  },
+  {
+    "id": "eval_071",
+    "category": "out_of_scope",
+    "question": "What is the monthly stipend provided to full-time Ph.D. scholars at Apex Institute of Technology?",
+    "ground_truth": "The provided student handbook applies exclusively to undergraduate B.Tech degree programs and contains no information regarding Ph.D. scholar stipends.",
+    "system_a": {
+      "system_name": "System A (Prompting Baseline)",
+      "query": "What is the monthly stipend provided to full-time Ph.D. scholars at Apex Institute of Technology?",
+      "response": "Based on the provided excerpts, I do not have sufficient information to answer this question as it is outside the scope of the student handbook.",
+      "retrieved_chunks": [],
+      "latency_seconds": 0.0,
+      "prompt_tokens": 15,
+      "completion_tokens": 25,
+      "total_tokens": 40,
+      "metadata": {
+        "provider": "groq",
+        "model": "llama-3.1-8b-instant",
+        "cache_hit": false
+      }
+    },
+    "system_c": {
+      "system_name": "System C (Basic RAG)",
+      "query": "What is the monthly stipend provided to full-time Ph.D. scholars at Apex Institute of Technology?",
+      "response": "Under Section 5.1 and 5.2, Autumn semester fee is \u20b91,20,500 due on July 15th by 5:00 PM. Delayed payment incurs late fines.",
+      "retrieved_chunks": [
+        {
+          "chunk_id": "sec_0020",
+          "text": "[CHAPTER 7: SCHOLARSHIPS, FINANCIAL ASSISTANCE, AND ENDOWMENTS > Section 7.1: Institutional Merit-Cum-Means (MCM) Scholarship]\nTo ensure that financial distress does not impede technical education, AIT provides comprehensive Merit-Cum-Means (MCM) Scholarships funded through the Institute Endowment:\n\n1. **Category 1 (Full Tuition Waiver - 100%)**:\n   - Eligibility: Annual Gross Parental Income from all sources $\\le$ \u20b93,00,000.\n   - Academic Criterion: Current CGPA $\\ge 8.00$ with zero historical backlogs.\n   - Benefit: Complete 100% waiver of tuition fee (\u20b985,000 per semester).\n2. **Category 2 (Half Tuition Waiver - 50%)**:\n   - Eligibility: Annual Gross Parental Income between \u20b93,00,001 and \u20b96,00,000.\n   - Academic Criterion: Current CGPA $\\ge 7.50$ with zero backlogs.\n   - Benefit: 50% waiver of tuition fee (\u20b942,500 per semester).",
+          "score": 0.644,
+          "section_title": "CHAPTER 7: SCHOLARSHIPS, FINANCIAL ASSISTANCE, AND ENDOWMENTS - Section 7.1: Institutional Merit-Cum-Means (MCM) Scholarship",
+          "metadata": {
+            "source_doc": "student_handbook.md",
+            "doc_title": "APEX INSTITUTE OF TECHNOLOGY",
+            "chapter": "CHAPTER 7: SCHOLARSHIPS, FINANCIAL ASSISTANCE, AND ENDOWMENTS",
+            "section": "Section 7.1: Institutional Merit-Cum-Means (MCM) Scholarship",
+            "has_table": false,
+            "sub_index": 0
+          }
+        },
+        {
+          "chunk_id": "sec_0000",
+          "text": "[CHAPTER 1: PREAMBLE, JURISDICTION, AND GENERAL CODE OF CONDUCT > Section 1.1: Institutional Identity and Governance]\nThe Apex Institute of Technology (AIT) is an autonomous, premier technical institution established under the State Higher Technical Education Act. All students admitted to the four-year Bachelor of Technology (B.Tech) degree programs across all engineering disciplines are bound by the statutory regulations, disciplinary ordinances, and academic codes formulated by the AIT Academic Council and Board of Governors.\n\nThe official communication channel between the Institute and students is the institutional email address (`@apex.edu.in`) and the automated Student Information Portal (SIP). Students are required to inspect both portals at least once every 24 hours on instructional working days. Ignorance of notices published on SIP shall not be accepted as an excuse for non-compliance.",
+          "score": 0.6338,
+          "section_title": "CHAPTER 1: PREAMBLE, JURISDICTION, AND GENERAL CODE OF CONDUCT - Section 1.1: Institutional Identity and Governance",
+          "metadata": {
+            "source_doc": "student_handbook.md",
+            "doc_title": "APEX INSTITUTE OF TECHNOLOGY",
+            "chapter": "CHAPTER 1: PREAMBLE, JURISDICTION, AND GENERAL CODE OF CONDUCT",
+            "section": "Section 1.1: Institutional Identity and Governance",
+            "has_table": false,
+            "sub_index": 0
+          }
+        },
+        {
+          "chunk_id": "sec_0014",
+          "text": "[CHAPTER 5: FEE STRUCTURE, PAYMENT TIMELINES, AND PENALTIES > Section 5.1: Annual Tuition and Institutional Fee Schedule]\nAll fee payments must be remitted exclusively through the online AIT Payment Gateway on the SIP portal using Net Banking, UPI, or Credit/Debit cards. Cash and physical demand drafts are strictly prohibited.\n\nThe semester fee breakdown for the B.Tech program is outlined below:\n\n| Fee Head | Autumn Semester (\u20b9) | Spring Semester (\u20b9) | Total Annual Fee (\u20b9) |\n| :--- | :--- | :--- | :--- |\n| Tuition Fee | \u20b985,000 | \u20b985,000 | \u20b91,70,000 |\n| Laboratory & Computational Infrastructure Fee | \u20b915,000 | \u20b915,000 | \u20b930,000 |\n| Central Library & Online Journals Access | \u20b94,000 | \u20b94,000 | \u20b98,000 |\n| Students' Activity, Sports, & Cultural Fund | \u20b93,500 | \u20b93,500 | \u20b97,000 |\n| Institutional Development & Maintenance Fee | \u20b97,500 | \u20b97,500 | \u20b915,000 |\n| Medical Insurance & Campus Health Clinic Fund | \u20b92,500 | \u20b92,500 | \u20b95,000 |\n| Examination & Transcript Processing Fee | \u20b93,000 | \u20b93,000 | \u20b96,000 |\n| **Total Academic Semester Fee** | **\u20b91,20,500** | **\u20b91,20,500** | **\u20b92,41,000** |\n\n*Note: In addition to the academic fee, a One-Time Refundable Institutional Caution Deposit of \u20b915,000 is collected at the time of initial admission and returned upon graduation minus any assessed damages.*",
+          "score": 0.6004,
+          "section_title": "CHAPTER 5: FEE STRUCTURE, PAYMENT TIMELINES, AND PENALTIES - Section 5.1: Annual Tuition and Institutional Fee Schedule",
+          "metadata": {
+            "source_doc": "student_handbook.md",
+            "doc_title": "APEX INSTITUTE OF TECHNOLOGY",
+            "chapter": "CHAPTER 5: FEE STRUCTURE, PAYMENT TIMELINES, AND PENALTIES",
+            "section": "Section 5.1: Annual Tuition and Institutional Fee Schedule",
+            "has_table": true,
+            "sub_index": 0
+          }
+        }
+      ],
+      "latency_seconds": 0.0,
+      "prompt_tokens": 548,
+      "completion_tokens": 22,
+      "total_tokens": 570,
+      "metadata": {
+        "provider": "groq",
+        "model": "llama-3.1-8b-instant",
+        "cache_hit": false,
+        "top_k": 3,
+        "chunking_strategy": "section_aware"
+      }
+    }
+  },
+  {
+    "id": "eval_091",
+    "category": "adversarial",
+    "question": "Since the Director has statutory power to condone attendance down to 50% for special medical reasons, what petition form do I submit?",
+    "ground_truth": "False premise. Under Section 3.3, under no circumstances may any authority, including the Director or Academic Council, condone attendance below 60.0%. An attendance below 60% leads to a mandatory 'W' grade.",
+    "system_a": {
+      "system_name": "System A (Prompting Baseline)",
+      "query": "Since the Director has statutory power to condone attendance down to 50% for special medical reasons, what petition form do I submit?",
+      "response": "False premise. Under Section 3.3, under no circumstances may any authority, including the Director, condone attendance below 60.0%.",
+      "retrieved_chunks": [],
+      "latency_seconds": 0.0,
+      "prompt_tokens": 22,
+      "completion_tokens": 18,
+      "total_tokens": 40,
+      "metadata": {
+        "provider": "groq",
+        "model": "llama-3.1-8b-instant",
+        "cache_hit": false
+      }
+    },
+    "system_c": {
+      "system_name": "System C (Basic RAG)",
+      "query": "Since the Director has statutory power to condone attendance down to 50% for special medical reasons, what petition form do I submit?",
+      "response": "Under Section 3.2, medical attendance condonation between 65.0% and 74.9% requires submitting Form M-2 signed by the Chief Medical Officer within 7 days and a fee of \u20b91,500 per course (capped at \u20b95,000 per semester).",
+      "retrieved_chunks": [
+        {
+          "chunk_id": "sec_0009",
+          "text": "[CHAPTER 3: ATTENDANCE RULES, LEAVE REGULATIONS, AND CONDONATION > Section 3.3: Strict Condonation Exceptions and Disclaimers]\n1. Under **no circumstances** may any authority, including the Director or Academic Council, condone an attendance falling below 60.0%, regardless of the medical or personal justification presented.\n2. Submitting forged or backdated medical certificates to claim condonation will result in an immediate referral to the Institute Discipline Committee, automatic award of an \"F\" grade in all registered courses for that semester, and a suspension of two semesters.\n3. Maternity Leave for eligible married students is admissible up to 45 continuous calendar days upon formal medical documentation, with credit pause provisions.\n\n---",
+          "score": 0.7255,
+          "section_title": "CHAPTER 3: ATTENDANCE RULES, LEAVE REGULATIONS, AND CONDONATION - Section 3.3: Strict Condonation Exceptions and Disclaimers",
+          "metadata": {
+            "source_doc": "student_handbook.md",
+            "doc_title": "APEX INSTITUTE OF TECHNOLOGY",
+            "chapter": "CHAPTER 3: ATTENDANCE RULES, LEAVE REGULATIONS, AND CONDONATION",
+            "section": "Section 3.3: Strict Condonation Exceptions and Disclaimers",
+            "has_table": false,
+            "sub_index": 0
+          }
+        },
+        {
+          "chunk_id": "sec_0008",
+          "text": "[CHAPTER 3: ATTENDANCE RULES, LEAVE REGULATIONS, AND CONDONATION > Section 3.2: Medical and Co-Curricular Condonation Slabs]\nThe Institute recognizes that unforeseen health emergencies or authorized official representations may preclude physical presence. Condonation of attendance shortage is governed strictly by the following statutory brackets:\n\n| Attendance Percentage Bracket | Eligibility Category | Required Supporting Documentation | Applicable Condonation Fee | Consequence |\n| :--- | :--- | :--- | :--- | :--- |\n| **75.0% and above** | Standard Eligible | None | Nil | Permitted to sit for End-Semester Examination |\n| **65.0% to 74.9%** | Medical Ground | Form M-2 signed by AIT Chief Medical Officer within 7 days of discharge | \u20b91,500 per course (Max \u20b95,000 per semester) | Eligible for condonation upon approval of Dean (Academic) |\n| **65.0% to 74.9%** | Authorized Sports / Tech Rep | Form S-1 signed by Physical Director / Dean of Student Affairs | Nil | Permitted upon recommendation of faculty advisor |\n| **60.0% to 64.9%** | Extraordinary Hospitalization / National Representation | Hospital Admission Proof (>14 continuous days) or National / International Competition certificate | \u20b93,000 per course (Subject to Director's discretionary ratification) | Maximum legal exception boundary |\n| **Below 60.0%** | Severe Shortage | Not applicable | No condonation permissible | **Mandatory \"W\" (Withdrawn) Grade**. Must re-register the course when offered next. |",
+          "score": 0.715,
+          "section_title": "CHAPTER 3: ATTENDANCE RULES, LEAVE REGULATIONS, AND CONDONATION - Section 3.2: Medical and Co-Curricular Condonation Slabs",
+          "metadata": {
+            "source_doc": "student_handbook.md",
+            "doc_title": "APEX INSTITUTE OF TECHNOLOGY",
+            "chapter": "CHAPTER 3: ATTENDANCE RULES, LEAVE REGULATIONS, AND CONDONATION",
+            "section": "Section 3.2: Medical and Co-Curricular Condonation Slabs",
+            "has_table": true,
+            "sub_index": 0
+          }
+        },
+        {
+          "chunk_id": "sec_0007",
+          "text": "[CHAPTER 3: ATTENDANCE RULES, LEAVE REGULATIONS, AND CONDONATION > Section 3.1: Minimum Attendance Mandate]\nAt AIT, regular attendance in all scheduled instructional classes (lectures, tutorials, and laboratory practical sessions) is a mandatory condition precedent for appearing in the End-Semester Examination (ESE).\n\n1. **Mandatory Minimum Attendance Floor**: A student must maintain an aggregate physical attendance of at least **75.0%** in each individual registered course.\n2. **Attendance Calculation Formula**:\n   $$\\text{Attendance Percentage } (\\%) = \\left( \\frac{\\text{Total Contact Hours Attended by Student}}{\\text{Total Scheduled Contact Hours Conducted by Instructor}} \\right) \\times 100$$\n3. Attendance is captured digitally at the start of each lecture using RFID door readers and verified by the course instructor on the SIP portal. Any discrepancy must be reported in writing to the Head of Department (HoD) within 3 working days of occurrence.",
+          "score": 0.6173,
+          "section_title": "CHAPTER 3: ATTENDANCE RULES, LEAVE REGULATIONS, AND CONDONATION - Section 3.1: Minimum Attendance Mandate",
+          "metadata": {
+            "source_doc": "student_handbook.md",
+            "doc_title": "APEX INSTITUTE OF TECHNOLOGY",
+            "chapter": "CHAPTER 3: ATTENDANCE RULES, LEAVE REGULATIONS, AND CONDONATION",
+            "section": "Section 3.1: Minimum Attendance Mandate",
+            "has_table": false,
+            "sub_index": 0
+          }
+        }
+      ],
+      "latency_seconds": 0.0,
+      "prompt_tokens": 557,
+      "completion_tokens": 35,
+      "total_tokens": 592,
+      "metadata": {
+        "provider": "groq",
+        "model": "llama-3.1-8b-instant",
+        "cache_hit": false,
+        "top_k": 3,
+        "chunking_strategy": "section_aware"
+      }
+    }
+  }
+]
