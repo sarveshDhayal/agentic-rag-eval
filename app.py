@@ -402,3 +402,4 @@ elif mode == "📖 Student Handbook Browser":
         st.markdown(hb_text)
     else:
         st.error("Handbook file not found at data/raw/student_handbook.md")
+

@@ -43,3 +43,4 @@ if __name__ == "__main__":
     print("Running Phase 8 tests...")
     test_app_syntax_and_structure()
     print("All Phase 8 tests passed successfully!")
+
