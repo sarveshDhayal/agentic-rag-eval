@@ -1,0 +1,12 @@
+{
+  "audit_status": "PASSED",
+  "eval_questions_count": 105,
+  "train_pairs_count": 678,
+  "exact_matches_count": 0,
+  "suspicious_fuzzy_matches_count": 0,
+  "fuzzy_threshold_used": 0.82,
+  "max_similarity_overall": 0.5938,
+  "average_max_similarity_per_eval_q": 0.3351,
+  "exact_matches": [],
+  "suspicious_fuzzy_matches": []
+}

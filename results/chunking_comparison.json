@@ -1,0 +1,29 @@
+{
+  "raw_text_total_characters": 28597,
+  "raw_text_total_words": 4339,
+  "fixed_size_strategy": {
+    "strategy": "fixed_size",
+    "total_chunks": 64,
+    "mean_char_length": 495.55,
+    "std_char_length": 31.82,
+    "min_char_length": 245,
+    "max_char_length": 500,
+    "mean_token_length": 76,
+    "chunks_with_tables": 12
+  },
+  "section_aware_strategy": {
+    "strategy": "section_aware",
+    "total_chunks": 25,
+    "mean_char_length": 1175.8,
+    "std_char_length": 362.78,
+    "min_char_length": 605,
+    "max_char_length": 2078,
+    "mean_token_length": 177.48,
+    "chunks_with_tables": 7
+  },
+  "structural_observations": [
+    "Fixed-size chunker splits tables into arbitrary character windows, breaking Markdown table headers from row values.",
+    "Section-aware chunker preserves all table rows as atomic markdown blocks within their respective chapter/section context.",
+    "Section-aware chunks include explicit context breadcrumbs (e.g. [Chapter 3 > Section 3.2]), preventing semantic ambiguity during dense vector retrieval."
+  ]
+}

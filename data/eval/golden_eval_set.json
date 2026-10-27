@@ -1,0 +1,842 @@
+[
+  {
+    "id": "eval_001",
+    "question": "What is the minimum physical attendance percentage required in each registered course to be eligible for End-Semester Examinations?",
+    "ground_truth": "A student must maintain an aggregate physical attendance of at least 75.0% in each individual registered course.",
+    "supporting_section": "Section 3.1: Minimum Attendance Mandate",
+    "category": "simple_factual",
+    "answerable": true
+  },
+  {
+    "id": "eval_002",
+    "question": "What is the penalty for failure to display an RFID badge upon spot inspection by security personnel?",
+    "ground_truth": "Security personnel are authorized to deny entry or levy an administrative fine of \u20b9200 for failure to display RFID badges upon spot inspection.",
+    "supporting_section": "Section 1.2: General Student Conduct and Anti-Ragging Ordinances",
+    "category": "simple_factual",
+    "answerable": true
+  },
+  {
+    "id": "eval_003",
+    "question": "How many total qualifying credits must a student accumulate to qualify for the award of the B.Tech degree?",
+    "ground_truth": "A student must accumulate a minimum of 160.0 qualifying credits across the 8 semesters.",
+    "supporting_section": "Section 2.1: Credit Architecture and Degree Requirements",
+    "category": "simple_factual",
+    "answerable": true
+  },
+  {
+    "id": "eval_004",
+    "question": "What is the standard allowable semester credit load range for a regular semester?",
+    "ground_truth": "The standard allowable semester credit load is between 18.0 and 24.0 credits per regular semester.",
+    "supporting_section": "Section 2.2: Course Registration Guidelines and Credit Limits",
+    "category": "simple_factual",
+    "answerable": true
+  },
+  {
+    "id": "eval_005",
+    "question": "What form must be submitted for medical condonation of attendance, and who must sign it?",
+    "ground_truth": "Form M-2 must be submitted, signed by the AIT Chief Medical Officer within 7 days of discharge.",
+    "supporting_section": "Section 3.2: Medical and Co-Curricular Condonation Slabs",
+    "category": "simple_factual",
+    "answerable": true
+  },
+  {
+    "id": "eval_006",
+    "question": "What is the condonation fee charged per course for medical attendance condonation between 65.0% and 74.9%?",
+    "ground_truth": "The fee is \u20b91,500 per course, subject to a maximum cap of \u20b95,000 per semester.",
+    "supporting_section": "Section 3.2: Medical and Co-Curricular Condonation Slabs",
+    "category": "simple_factual",
+    "answerable": true
+  },
+  {
+    "id": "eval_007",
+    "question": "What grade is mandatorily awarded to a student whose attendance falls below 60.0%?",
+    "ground_truth": "A mandatory 'W' (Withdrawn) grade is awarded, and the student must re-register for the entire course when offered next.",
+    "supporting_section": "Section 3.2: Medical and Co-Curricular Condonation Slabs",
+    "category": "simple_factual",
+    "answerable": true
+  },
+  {
+    "id": "eval_008",
+    "question": "What is the weightage split between Continuous Internal Evaluation (CIE) and Semester End Examination (SEE)?",
+    "ground_truth": "Each registered course is assessed with a 50% weightage (50 marks) for CIE and 50% weightage (50 marks) for SEE.",
+    "supporting_section": "Section 4.1: Continuous Internal Evaluation (CIE) and Semester End Examination (SEE)",
+    "category": "simple_factual",
+    "answerable": true
+  },
+  {
+    "id": "eval_009",
+    "question": "What is the minimum percentage marks required in a course to secure a passing grade 'C'?",
+    "ground_truth": "The minimum passing percentage marks range for grade 'C' is 40% (40 - 49 marks).",
+    "supporting_section": "Section 4.2: 10-Point Absolute Letter Grading System",
+    "category": "simple_factual",
+    "answerable": true
+  },
+  {
+    "id": "eval_010",
+    "question": "What is the maximum grade attainable in a summer supplementary examination?",
+    "ground_truth": "The maximum attainable grade in a supplementary examination is capped at 'A' (8.0 grade points).",
+    "supporting_section": "Section 4.4: Supplementary Examinations and Re-evaluation Protocol",
+    "category": "simple_factual",
+    "answerable": true
+  },
+  {
+    "id": "eval_011",
+    "question": "Within how many calendar days must a student apply for SEE re-evaluation following grade notification?",
+    "ground_truth": "A student must apply for re-evaluation via the SIP portal within 10 calendar days from the date of grade notification.",
+    "supporting_section": "Section 4.4: Supplementary Examinations and Re-evaluation Protocol",
+    "category": "simple_factual",
+    "answerable": true
+  },
+  {
+    "id": "eval_012",
+    "question": "What is the fee charged per theory course for script re-evaluation?",
+    "ground_truth": "A non-refundable fee of \u20b91,000 per theory course must be deposited online.",
+    "supporting_section": "Section 4.4: Supplementary Examinations and Re-evaluation Protocol",
+    "category": "simple_factual",
+    "answerable": true
+  },
+  {
+    "id": "eval_013",
+    "question": "What is the total academic semester fee for the Autumn semester?",
+    "ground_truth": "The total academic semester fee for the Autumn semester is \u20b91,20,500.",
+    "supporting_section": "Section 5.1: Annual Tuition and Institutional Fee Schedule",
+    "category": "simple_factual",
+    "answerable": true
+  },
+  {
+    "id": "eval_014",
+    "question": "What is the exact deadline date and time for Autumn semester fee payment without late fine?",
+    "ground_truth": "The statutory due date for Autumn semester fee payment is July 15th by 5:00 PM IST.",
+    "supporting_section": "Section 5.2: Due Dates, Late Fine Slabs, and Deregistration",
+    "category": "simple_factual",
+    "answerable": true
+  },
+  {
+    "id": "eval_015",
+    "question": "What is the weekday curfew time for undergraduate hostel residents?",
+    "ground_truth": "The weekday curfew (Monday through Friday) requires biometric check-in at hostel gates by 9:30 PM.",
+    "supporting_section": "Section 6.3: Curfew Timings, Late Slips, and Disciplinary Measures",
+    "category": "simple_factual",
+    "answerable": true
+  },
+  {
+    "id": "eval_016",
+    "question": "What is the weekend curfew time for hostel residents?",
+    "ground_truth": "The weekend curfew (Saturday and Sunday) permits biometric check-in up to 10:30 PM.",
+    "supporting_section": "Section 6.3: Curfew Timings, Late Slips, and Disciplinary Measures",
+    "category": "simple_factual",
+    "answerable": true
+  },
+  {
+    "id": "eval_017",
+    "question": "How many grace late slips is a hostel resident allotted per semester?",
+    "ground_truth": "Every student is allotted a maximum quota of 3 Grace Late Slips per academic semester.",
+    "supporting_section": "Section 6.3: Curfew Timings, Late Slips, and Disciplinary Measures",
+    "category": "simple_factual",
+    "answerable": true
+  },
+  {
+    "id": "eval_018",
+    "question": "What is the spot fine for keeping unauthorized electrical heating appliances in hostel rooms?",
+    "ground_truth": "The discovery of prohibited electrical appliances incurs spot confiscation and a non-negotiable fine of \u20b93,000 per appliance.",
+    "supporting_section": "Section 6.3: Curfew Timings, Late Slips, and Disciplinary Measures",
+    "category": "simple_factual",
+    "answerable": true
+  },
+  {
+    "id": "eval_019",
+    "question": "What is the cash grant awarded under the Chairman's Academic Excellence Award?",
+    "ground_truth": "The award includes a cash grant of \u20b950,000, along with a Gold Medal and a Certificate of Commendation.",
+    "supporting_section": "Section 7.2: Chairman\u2019s Academic Excellence Award",
+    "category": "simple_factual",
+    "answerable": true
+  },
+  {
+    "id": "eval_020",
+    "question": "How many books may an undergraduate student borrow simultaneously from the Central Library?",
+    "ground_truth": "Undergraduate students may borrow up to 4 books simultaneously for a maximum loan duration of 14 calendar days.",
+    "supporting_section": "Section 8.1: Central Library Circulation Rules",
+    "category": "simple_factual",
+    "answerable": true
+  },
+  {
+    "id": "eval_021",
+    "question": "What is the overdue fine per day per book for the first 7 overdue days at the library?",
+    "ground_truth": "The overdue fine is \u20b95 per day per book for the first 7 overdue days, and \u20b910 per day per book thereafter.",
+    "supporting_section": "Section 8.1: Central Library Circulation Rules",
+    "category": "simple_factual",
+    "answerable": true
+  },
+  {
+    "id": "eval_022",
+    "question": "What is the maximum Turnitin similarity index permitted for Level 0 capstone project clearance?",
+    "ground_truth": "Level 0 requires a similarity index of 10% or less (<= 10%), which clears the student for formal viva defense.",
+    "supporting_section": "Section 9.1: Plagiarism Limits in Capstone Projects and Theses",
+    "category": "simple_factual",
+    "answerable": true
+  },
+  {
+    "id": "eval_023",
+    "question": "What is the penalty for possession of unauthorized chits in an examination without consultation (UMC Category A)?",
+    "ground_truth": "Under Category A, the examination in that particular course is cancelled and an 'F' grade is awarded.",
+    "supporting_section": "Section 9.2: Examination Malpractice and Unfair Means Code (UMC)",
+    "category": "simple_factual",
+    "answerable": true
+  },
+  {
+    "id": "eval_024",
+    "question": "What is the maximum continuous wall-clock run time permitted for batch jobs on the HPC cluster?",
+    "ground_truth": "Individual batch compute jobs are limited to a maximum continuous run wall-clock time of 24.0 hours.",
+    "supporting_section": "Section 8.2: Acceptable Use Policy for High-Performance Computing (HPC) Clusters",
+    "category": "simple_factual",
+    "answerable": true
+  },
+  {
+    "id": "eval_025",
+    "question": "What is the one-time refundable hostel security deposit payable during room allotment?",
+    "ground_truth": "A one-time refundable Hostel Security Deposit of \u20b910,000 is payable during initial room allotment.",
+    "supporting_section": "Section 6.1: Hostel Accommodation Allotment and Amenities",
+    "category": "simple_factual",
+    "answerable": true
+  },
+  {
+    "id": "eval_026",
+    "question": "If a student wants to graduate with First Class with Distinction, what are the minimum CGPA and historical backlog conditions required?",
+    "ground_truth": "The student must maintain a CGPA of >= 8.50, complete the degree within exactly 8 consecutive semesters, and have zero historical backlog grades ('F' or 'W').",
+    "supporting_section": "Section 4.3: Computation of SGPA and CGPA",
+    "category": "multi_hop",
+    "answerable": true
+  },
+  {
+    "id": "eval_027",
+    "question": "Can a student who received an attendance shortage 'W' grade appear in the summer supplementary examination?",
+    "ground_truth": "No. Supplementary exams are strictly restricted to students who scored an 'F' grade with attendance >= 60%. A student with a 'W' grade has attendance < 60% and must re-register the entire course with attendance.",
+    "supporting_section": "Section 3.2 & Section 4.4",
+    "category": "multi_hop",
+    "answerable": true
+  },
+  {
+    "id": "eval_028",
+    "question": "If two students tie for the Chairman's Academic Excellence Award with identical CGPAs of 9.40, how is the winner determined?",
+    "ground_truth": "The tie is broken first by the highest cumulative marks obtained in Professional Core Courses (PCC); if still tied, by highest attendance percentage across preceding two semesters; and finally by age (younger candidate).",
+    "supporting_section": "Section 7.2: Chairman\u2019s Academic Excellence Award",
+    "category": "multi_hop",
+    "answerable": true
+  },
+  {
+    "id": "eval_029",
+    "question": "What happens if a student applies for re-evaluation and their mark increases from 54 to 57?",
+    "ground_truth": "The original mark remains unchanged because the difference (3 marks) is strictly less than the mandatory alteration threshold of >= 5.0 marks.",
+    "supporting_section": "Section 4.4: Supplementary Examinations and Re-evaluation Protocol",
+    "category": "multi_hop",
+    "answerable": true
+  },
+  {
+    "id": "eval_030",
+    "question": "How does Academic Probation impact a student's semester credit registration limits compared to high performers?",
+    "ground_truth": "Students on Academic Probation (CGPA < 5.00) are restricted to a reduced load of 12.0 to 16.0 credits, whereas high performers (CGPA >= 8.50) can overload up to 28.0 credits.",
+    "supporting_section": "Section 2.2: Course Registration Guidelines and Credit Limits",
+    "category": "multi_hop",
+    "answerable": true
+  },
+  {
+    "id": "eval_031",
+    "question": "If a student's capstone project report has a Turnitin similarity of 25%, what action is taken, and how long do they have to fix it?",
+    "ground_truth": "A 25% similarity falls into Level 1 (10% to 40%). The student is granted a grace period of 14 calendar days to revise the manuscript and resubmit without penalty.",
+    "supporting_section": "Section 9.1: Plagiarism Limits in Capstone Projects and Theses",
+    "category": "multi_hop",
+    "answerable": true
+  },
+  {
+    "id": "eval_032",
+    "question": "Can a student who was caught cheating under UMC Category B retain their Merit-Cum-Means scholarship?",
+    "ground_truth": "No. Under Section 7.4, any student found guilty of cheating in examinations forfeits all institutional scholarships permanently and must refund all disbursed funds within 30 days.",
+    "supporting_section": "Section 7.4 & Section 9.2",
+    "category": "multi_hop",
+    "answerable": true
+  },
+  {
+    "id": "eval_033",
+    "question": "What is the total credit requirement for Professional Core Courses (PCC) and Engineering Science Courses (ESC) combined?",
+    "ground_truth": "The minimum credit requirement is 58.0 credits for PCC and 22.0 credits for ESC, totaling 80.0 credits.",
+    "supporting_section": "Section 2.1: Credit Architecture and Degree Requirements",
+    "category": "multi_hop",
+    "answerable": true
+  },
+  {
+    "id": "eval_034",
+    "question": "If an MCM Category 1 scholarship student incurs an attendance shortage below 60% in a course, what grade do they get, and what happens to their scholarship?",
+    "ground_truth": "The student receives a mandatory 'W' grade. If this causes their CGPA to fall below 6.50, their scholarship is suspended for the following semester.",
+    "supporting_section": "Section 3.2 & Section 7.4",
+    "category": "multi_hop",
+    "answerable": true
+  },
+  {
+    "id": "eval_035",
+    "question": "What is the difference in curfew hours between weekdays and weekends for hostel residents, and how many times can a student exceed curfew using grace slips?",
+    "ground_truth": "Weekday curfew is 9:30 PM while weekend curfew is 10:30 PM (a 1-hour extension). A student can use up to 3 grace late slips per semester for entry up to 60 minutes late.",
+    "supporting_section": "Section 6.3: Curfew Timings, Late Slips, and Disciplinary Measures",
+    "category": "multi_hop",
+    "answerable": true
+  },
+  {
+    "id": "eval_036",
+    "question": "Under what circumstances may a student take an add/drop action on a core course during the 10-day add/drop period?",
+    "ground_truth": "Core courses cannot be dropped under any circumstances; the 10-calendar-day add/drop period applies strictly to elective courses within the 18.0 to 24.0 credit limits.",
+    "supporting_section": "Section 2.2: Course Registration Guidelines and Credit Limits",
+    "category": "multi_hop",
+    "answerable": true
+  },
+  {
+    "id": "eval_037",
+    "question": "What sequence of penalties occurs if a hostel student exceeds their 3 grace late slips and arrives late two additional times?",
+    "ground_truth": "For the 1st violation past grace quota, they receive a written warning and \u20b9500 fine; for the 2nd violation, a \u20b91,500 fine and an SMS alert to registered parents.",
+    "supporting_section": "Section 6.3: Curfew Timings, Late Slips, and Disciplinary Measures",
+    "category": "multi_hop",
+    "answerable": true
+  },
+  {
+    "id": "eval_038",
+    "question": "Can a 2nd year student with a 9.0 CGPA reserve an NVIDIA A100 GPU on the HPC cluster for a machine learning assignment?",
+    "ground_truth": "No. HPC access is strictly limited to 7th/8th semester students working on capstone projects or sponsored faculty research with supervisor endorsement.",
+    "supporting_section": "Section 8.2: Acceptable Use Policy for High-Performance Computing (HPC) Clusters",
+    "category": "multi_hop",
+    "answerable": true
+  },
+  {
+    "id": "eval_039",
+    "question": "If a student loses an out-of-print textbook borrowed from the central library with an original retail price of \u20b91,200, what is the exact amount payable?",
+    "ground_truth": "The student must pay three times the current listed retail market price (3 * \u20b91,200 = \u20b93,600) plus an administrative processing charge of \u20b9250, totaling \u20b93,850.",
+    "supporting_section": "Section 8.1: Central Library Circulation Rules",
+    "category": "multi_hop",
+    "answerable": true
+  },
+  {
+    "id": "eval_040",
+    "question": "What is the minimum CGPA required at the end of the 4th semester to avoid a terminal show-cause notice and academic cool-off?",
+    "ground_truth": "The student must maintain a CGPA of at least 4.50; falling below 4.50 results in a terminal show-cause notice and a 1-year academic cool-off period.",
+    "supporting_section": "Section 4.3: Computation of SGPA and CGPA",
+    "category": "multi_hop",
+    "answerable": true
+  },
+  {
+    "id": "eval_041",
+    "question": "What combined parental income and CGPA must a student possess to obtain a 50% tuition waiver under the MCM scheme?",
+    "ground_truth": "Annual Gross Parental Income between \u20b93,00,001 and \u20b96,00,000, and a current CGPA >= 7.50 with zero backlogs.",
+    "supporting_section": "Section 7.1: Institutional Merit-Cum-Means (MCM) Scholarship",
+    "category": "multi_hop",
+    "answerable": true
+  },
+  {
+    "id": "eval_042",
+    "question": "If a student has 68% attendance due to representing AIT in an authorized basketball tournament, what form must be submitted and what fee is charged?",
+    "ground_truth": "Form S-1 signed by the Physical Director / Dean of Student Affairs must be submitted, and no condonation fee is charged (Nil fee).",
+    "supporting_section": "Section 3.2: Medical and Co-Curricular Condonation Slabs",
+    "category": "multi_hop",
+    "answerable": true
+  },
+  {
+    "id": "eval_043",
+    "question": "What happens if a student fails to pay their semester fee within 30 days after the statutory due date?",
+    "ground_truth": "On Day 31, the student faces automatic de-registration and their name is struck from class rolls; restoration requires paying all arrears, a \u20b95,000 late fine, and a \u20b910,000 re-admission fee.",
+    "supporting_section": "Section 5.2: Due Dates, Late Fine Slabs, and Deregistration",
+    "category": "multi_hop",
+    "answerable": true
+  },
+  {
+    "id": "eval_044",
+    "question": "What are the continuous evaluation components and marks for Laboratory courses?",
+    "ground_truth": "Continuous lab marks (50 marks total) consist of: weekly preparation & viva (20 marks), experimental execution & observation log (20 marks), and mini-project/code portfolio (10 marks).",
+    "supporting_section": "Section 4.1: Continuous Internal Evaluation (CIE) and Semester End Examination (SEE)",
+    "category": "multi_hop",
+    "answerable": true
+  },
+  {
+    "id": "eval_045",
+    "question": "If a student secures 74 marks in a theory course, what letter grade and grade points do they receive?",
+    "ground_truth": "A score of 74 marks falls in the 70 - 79 range, corresponding to letter grade 'A' and 8.0 grade points.",
+    "supporting_section": "Section 4.2: 10-Point Absolute Letter Grading System",
+    "category": "multi_hop",
+    "answerable": true
+  },
+  {
+    "id": "eval_046",
+    "question": "What constitutes Level 2 plagiarism in capstone projects, and what is the academic penalty?",
+    "ground_truth": "Level 2 is a similarity index between > 40% and <= 60%. The student is disqualified from defending the project in the current semester and must repeat it in the following semester with a new topic.",
+    "supporting_section": "Section 9.1: Plagiarism Limits in Capstone Projects and Theses",
+    "category": "multi_hop",
+    "answerable": true
+  },
+  {
+    "id": "eval_047",
+    "question": "Can a student living 20 km away from campus opt out of hostel residency?",
+    "ground_truth": "Yes. Residency in campus hostels is optional for students residing within a 25-kilometer radius of the campus.",
+    "supporting_section": "Section 6.1: Hostel Accommodation Allotment and Amenities",
+    "category": "multi_hop",
+    "answerable": true
+  },
+  {
+    "id": "eval_048",
+    "question": "What is the penalty if a student is caught actively communicating answers to peers during an examination?",
+    "ground_truth": "This is UMC Category B. All registered examinations in that semester are cancelled, 'F' grades awarded in all courses, and the student is debarred from the summer supplementary term.",
+    "supporting_section": "Section 9.2: Examination Malpractice and Unfair Means Code (UMC)",
+    "category": "multi_hop",
+    "answerable": true
+  },
+  {
+    "id": "eval_049",
+    "question": "What is the maximum number of instructional contact hours per week represented by a 4-credit course consisting of 3 hours lecture and 2 hours lab?",
+    "ground_truth": "3 hours lecture (3.0 credits) + 2 hours lab (1.0 credit) = 4.0 credits, requiring 5 total contact hours per week.",
+    "supporting_section": "Section 2.1: Credit Architecture and Degree Requirements",
+    "category": "multi_hop",
+    "answerable": true
+  },
+  {
+    "id": "eval_050",
+    "question": "Under what conditions can a student claim a mess rebate, and what is the advance notice requirement?",
+    "ground_truth": "Absence must be for at least 4 consecutive days on authorized leave, and an online application must be submitted on SIP at least 48 hours in advance.",
+    "supporting_section": "Section 6.2: Mess Regulations and Dining Rebate Policy",
+    "category": "multi_hop",
+    "answerable": true
+  },
+  {
+    "id": "eval_051",
+    "question": "If a course has 60 scheduled contact hours, what is the minimum number of hours a student must attend to meet the 75% attendance floor?",
+    "ground_truth": "A student must attend at least 45 hours (0.75 * 60 = 45 hours).",
+    "supporting_section": "Section 3.1: Minimum Attendance Mandate",
+    "category": "numeric_calculation",
+    "answerable": true
+  },
+  {
+    "id": "eval_052",
+    "question": "A student pays their Autumn semester fee on August 5th (21 days past the July 15 due date). How much late fine must they pay?",
+    "ground_truth": "For 21 days late (falls in Day 16 to Day 30 bracket: \u20b92,500 + \u20b9100 per day past Day 15). Days past Day 15 = 6 days. Late fine = \u20b92,500 + (6 * \u20b9100) = \u20b93,100.",
+    "supporting_section": "Section 5.2: Due Dates, Late Fine Slabs, and Deregistration",
+    "category": "numeric_calculation",
+    "answerable": true
+  },
+  {
+    "id": "eval_053",
+    "question": "If a student stays absent from the mess on approved academic leave for 12 consecutive days, what total mess dining rebate will they receive?",
+    "ground_truth": "12 days * \u20b9120 per day = \u20b91,440 rebate.",
+    "supporting_section": "Section 6.2: Mess Regulations and Dining Rebate Policy",
+    "category": "numeric_calculation",
+    "answerable": true
+  },
+  {
+    "id": "eval_054",
+    "question": "Compute the SGPA for a student taking 4 courses: Course 1 (4 credits, grade A+ = 9.0), Course 2 (3 credits, grade A = 8.0), Course 3 (3 credits, grade B+ = 7.0), Course 4 (2 credits, grade O = 10.0).",
+    "ground_truth": "Total Grade Points = (4*9) + (3*8) + (3*7) + (2*10) = 36 + 24 + 21 + 20 = 101. Total Credits = 4 + 3 + 3 + 2 = 12. SGPA = 101 / 12 = 8.4167 (approx 8.42).",
+    "supporting_section": "Section 4.3: Computation of SGPA and CGPA",
+    "category": "numeric_calculation",
+    "answerable": true
+  },
+  {
+    "id": "eval_055",
+    "question": "What is the total fee payable for initial admission into Type-A single-occupancy AC hostel including rent, mess, and caution deposit?",
+    "ground_truth": "Semester Rent (\u20b938,000) + Mess Fee (\u20b922,000) + Refundable Hostel Security Deposit (\u20b910,000) = \u20b970,000.",
+    "supporting_section": "Section 6.1 & Section 6.2",
+    "category": "numeric_calculation",
+    "answerable": true
+  },
+  {
+    "id": "eval_056",
+    "question": "If a student returns 2 library books 10 days after the 14-day loan period, what is the total overdue fine?",
+    "ground_truth": "For each book: first 7 days @ \u20b95/day = \u20b935; next 3 days @ \u20b910/day = \u20b930; total per book = \u20b965. For 2 books: 2 * \u20b965 = \u20b9130.",
+    "supporting_section": "Section 8.1: Central Library Circulation Rules",
+    "category": "numeric_calculation",
+    "answerable": true
+  },
+  {
+    "id": "eval_057",
+    "question": "A student with 66% medical attendance shortage in 4 distinct courses applies for condonation with Form M-2. What is the total condonation fee?",
+    "ground_truth": "Normal fee is 4 * \u20b91,500 = \u20b96,000. However, the maximum cap is \u20b95,000 per semester. Therefore, the fee charged is \u20b95,000.",
+    "supporting_section": "Section 3.2: Medical and Co-Curricular Condonation Slabs",
+    "category": "numeric_calculation",
+    "answerable": true
+  },
+  {
+    "id": "eval_058",
+    "question": "What is the total annual academic fee for a B.Tech student across both Autumn and Spring semesters combined?",
+    "ground_truth": "Autumn semester fee (\u20b91,20,500) + Spring semester fee (\u20b91,20,500) = \u20b92,41,000.",
+    "supporting_section": "Section 5.1: Annual Tuition and Institutional Fee Schedule",
+    "category": "numeric_calculation",
+    "answerable": true
+  },
+  {
+    "id": "eval_059",
+    "question": "If a student in a Type-B AC double room uses 110 electricity units in a month, how much excess electricity charge must they pay?",
+    "ground_truth": "Free quota is 80 units/student/month. Excess units = 110 - 80 = 30 units. At \u20b910 per unit, excess charge = 30 * \u20b910 = \u20b9300.",
+    "supporting_section": "Section 6.1: Hostel Accommodation Allotment and Amenities",
+    "category": "numeric_calculation",
+    "answerable": true
+  },
+  {
+    "id": "eval_060",
+    "question": "If a student qualifies for Category 1 MCM Scholarship (100% tuition waiver), what is their remaining academic semester fee payable for Autumn semester?",
+    "ground_truth": "Total Autumn fee is \u20b91,20,500 and Tuition fee is \u20b985,000. Remaining fee payable = \u20b91,20,500 - \u20b985,000 = \u20b935,500.",
+    "supporting_section": "Section 5.1 & Section 7.1",
+    "category": "numeric_calculation",
+    "answerable": true
+  },
+  {
+    "id": "eval_061",
+    "question": "How much total tuition waiver does a Category 2 MCM scholarship recipient receive across one full academic year (two semesters)?",
+    "ground_truth": "50% waiver of \u20b985,000 per semester is \u20b942,500 per semester. Across two semesters: 2 * \u20b942,500 = \u20b985,000.",
+    "supporting_section": "Section 7.1: Institutional Merit-Cum-Means (MCM) Scholarship",
+    "category": "numeric_calculation",
+    "answerable": true
+  },
+  {
+    "id": "eval_062",
+    "question": "If a student registers for 22 credits and misses 8 classes out of 40 in a 3-credit course, what is their attendance percentage in that course?",
+    "ground_truth": "Attended hours = 40 - 8 = 32 hours. Attendance percentage = (32 / 40) * 100 = 80.0%.",
+    "supporting_section": "Section 3.1: Minimum Attendance Mandate",
+    "category": "numeric_calculation",
+    "answerable": true
+  },
+  {
+    "id": "eval_063",
+    "question": "A student applies for re-evaluation in 3 theory courses. What is the total re-evaluation application fee?",
+    "ground_truth": "3 courses * \u20b91,000 per theory course = \u20b93,000.",
+    "supporting_section": "Section 4.4: Supplementary Examinations and Re-evaluation Protocol",
+    "category": "numeric_calculation",
+    "answerable": true
+  },
+  {
+    "id": "eval_064",
+    "question": "What is the maximum dining rebate a student can claim in one semester if they are absent for 25 days?",
+    "ground_truth": "The maximum allowable rebate is capped at 20 calendar days per semester: 20 * \u20b9120 = \u20b92,400.",
+    "supporting_section": "Section 6.2: Mess Regulations and Dining Rebate Policy",
+    "category": "numeric_calculation",
+    "answerable": true
+  },
+  {
+    "id": "eval_065",
+    "question": "If a student completes 146 credits by semester 7, how many credits must they register and pass in semester 8 to satisfy the 160.0 credit graduation requirement?",
+    "ground_truth": "160.0 - 146.0 = 14.0 credits.",
+    "supporting_section": "Section 2.1: Credit Architecture and Degree Requirements",
+    "category": "numeric_calculation",
+    "answerable": true
+  },
+  {
+    "id": "eval_066",
+    "question": "A student completes course registration on the 8th working day after the deadline. What late registration fee is levied?",
+    "ground_truth": "Registration submitted between the 6th and 10th working day incurs a late fee of \u20b92,500.",
+    "supporting_section": "Section 2.2: Course Registration Guidelines and Credit Limits",
+    "category": "numeric_calculation",
+    "answerable": true
+  },
+  {
+    "id": "eval_067",
+    "question": "If a student has a CGPA of 8.60, what is the maximum number of additional credits they can register beyond the normal 24.0 credit ceiling?",
+    "ground_truth": "With CGPA >= 8.50, they may register up to a ceiling of 28.0 credits, which is 4.0 additional credits beyond 24.0.",
+    "supporting_section": "Section 2.2: Course Registration Guidelines and Credit Limits",
+    "category": "numeric_calculation",
+    "answerable": true
+  },
+  {
+    "id": "eval_068",
+    "question": "A hostel resident is caught with 2 electric immersion heaters during room inspection. What is the total spot fine?",
+    "ground_truth": "2 appliances * \u20b93,000 per appliance = \u20b96,000.",
+    "supporting_section": "Section 6.3: Curfew Timings, Late Slips, and Disciplinary Measures",
+    "category": "numeric_calculation",
+    "answerable": true
+  },
+  {
+    "id": "eval_069",
+    "question": "What is the cash award for a student representing AIT who wins a Silver Medal in an AIU-recognized national sports tournament?",
+    "ground_truth": "The honorarium for a Silver Medalist is \u20b915,000.",
+    "supporting_section": "Section 7.3: Sports and Creative Talent Endowments",
+    "category": "numeric_calculation",
+    "answerable": true
+  },
+  {
+    "id": "eval_070",
+    "question": "What is the total refund a graduating student receives from their initial academic caution deposit (\u20b915,000) and hostel security deposit (\u20b910,000) assuming zero damages?",
+    "ground_truth": "\u20b915,000 + \u20b910,000 = \u20b925,000.",
+    "supporting_section": "Section 5.1 & Section 6.1",
+    "category": "numeric_calculation",
+    "answerable": true
+  },
+  {
+    "id": "eval_071",
+    "question": "What is the monthly stipend provided to full-time Ph.D. scholars at Apex Institute of Technology?",
+    "ground_truth": "The provided student handbook applies exclusively to undergraduate B.Tech degree programs and contains no information regarding Ph.D. scholar stipends.",
+    "supporting_section": "None",
+    "category": "out_of_scope",
+    "answerable": false
+  },
+  {
+    "id": "eval_072",
+    "question": "What are the operating hours and lane reservation rules for the campus Olympic swimming pool?",
+    "ground_truth": "The student handbook does not contain any regulations or information regarding an Olympic swimming pool or pool lane reservations.",
+    "supporting_section": "None",
+    "category": "out_of_scope",
+    "answerable": false
+  },
+  {
+    "id": "eval_073",
+    "question": "How can an international exchange student apply for an on-campus visa extension through the international relations office?",
+    "ground_truth": "The handbook does not provide information on international exchange student visa extension procedures.",
+    "supporting_section": "None",
+    "category": "out_of_scope",
+    "answerable": false
+  },
+  {
+    "id": "eval_074",
+    "question": "What is the syllabus and recommended textbook for 3rd semester Data Structures and Algorithms (CS201)?",
+    "ground_truth": "The handbook outlines credit framework and academic policies, but does not contain specific course syllabi or recommended textbooks.",
+    "supporting_section": "None",
+    "category": "out_of_scope",
+    "answerable": false
+  },
+  {
+    "id": "eval_075",
+    "question": "What commission does the college off-campus housing brokerage office charge for finding private apartments?",
+    "ground_truth": "The handbook makes no mention of an off-campus housing brokerage office or rental commission rates.",
+    "supporting_section": "None",
+    "category": "out_of_scope",
+    "answerable": false
+  },
+  {
+    "id": "eval_076",
+    "question": "What are the rules and parking permit fees for undergraduate students bringing four-wheeler cars onto campus?",
+    "ground_truth": "The student handbook does not specify four-wheeler parking rules or parking permit fees for undergraduate students.",
+    "supporting_section": "None",
+    "category": "out_of_scope",
+    "answerable": false
+  },
+  {
+    "id": "eval_077",
+    "question": "How much financial seed funding does the AIT Student Startup Incubation Centre provide for patent filing?",
+    "ground_truth": "The student handbook contains no information about seed funding grants from a startup incubation centre.",
+    "supporting_section": "None",
+    "category": "out_of_scope",
+    "answerable": false
+  },
+  {
+    "id": "eval_078",
+    "question": "What are the vaccination and quarantine requirements for students keeping domestic pets in hostel rooms?",
+    "ground_truth": "The handbook does not detail pet vaccination or quarantine rules (pets are not covered in the residential policies).",
+    "supporting_section": "None",
+    "category": "out_of_scope",
+    "answerable": false
+  },
+  {
+    "id": "eval_079",
+    "question": "What is the procedure for booking the main auditorium for private birthday parties?",
+    "ground_truth": "The handbook contains no provisions or rules permitting the booking of the main auditorium for private birthday celebrations.",
+    "supporting_section": "None",
+    "category": "out_of_scope",
+    "answerable": false
+  },
+  {
+    "id": "eval_080",
+    "question": "What are the placement package statistics and average salary for the Civil Engineering department?",
+    "ground_truth": "The handbook does not contain placement statistics, recruitment records, or departmental average salary data.",
+    "supporting_section": "None",
+    "category": "out_of_scope",
+    "answerable": false
+  },
+  {
+    "id": "eval_081",
+    "question": "How do students apply for the study-abroad dual degree semester at the University of Melbourne?",
+    "ground_truth": "The handbook contains no mention of a dual degree partnership with the University of Melbourne.",
+    "supporting_section": "None",
+    "category": "out_of_scope",
+    "answerable": false
+  },
+  {
+    "id": "eval_082",
+    "question": "What brand of microwave oven is installed in the communal kitchenettes on each hostel floor?",
+    "ground_truth": "The handbook does not mention communal kitchenettes or specific microwave oven appliances in hostels.",
+    "supporting_section": "None",
+    "category": "out_of_scope",
+    "answerable": false
+  },
+  {
+    "id": "eval_083",
+    "question": "What is the fee for renting academic convocation gowns for parents during graduation day?",
+    "ground_truth": "The handbook mentions the Annual Convocation Day in passing but specifies no rental fees for guest convocation gowns.",
+    "supporting_section": "None",
+    "category": "out_of_scope",
+    "answerable": false
+  },
+  {
+    "id": "eval_084",
+    "question": "How many free counseling sessions are provided to students at the Psychological Wellness Centre?",
+    "ground_truth": "The handbook does not contain operational details or free session counts for a Psychological Wellness Centre.",
+    "supporting_section": "None",
+    "category": "out_of_scope",
+    "answerable": false
+  },
+  {
+    "id": "eval_085",
+    "question": "What are the rules and election spending caps for the AIT Student Union presidential elections?",
+    "ground_truth": "The handbook contains no regulations regarding Student Union elections or election expenditure limits.",
+    "supporting_section": "None",
+    "category": "out_of_scope",
+    "answerable": false
+  },
+  {
+    "id": "eval_086",
+    "question": "What is the discount rate offered to students at the campus Starbucks outlet?",
+    "ground_truth": "The handbook does not document commercial food franchise discounts or a campus Starbucks store.",
+    "supporting_section": "None",
+    "category": "out_of_scope",
+    "answerable": false
+  },
+  {
+    "id": "eval_087",
+    "question": "What are the qualifications and recruitment criteria for visiting adjunct professors in AI?",
+    "ground_truth": "The handbook is an undergraduate student handbook and does not govern faculty or adjunct professor recruitment criteria.",
+    "supporting_section": "None",
+    "category": "out_of_scope",
+    "answerable": false
+  },
+  {
+    "id": "eval_088",
+    "question": "How does a student reserve badminton courts in the indoor sports complex for weekend evenings?",
+    "ground_truth": "The handbook does not specify court reservation protocols for the indoor sports complex.",
+    "supporting_section": "None",
+    "category": "out_of_scope",
+    "answerable": false
+  },
+  {
+    "id": "eval_089",
+    "question": "What is the bus schedule and fare for the daily weekend shuttle service to the city shopping mall?",
+    "ground_truth": "The handbook does not mention weekend campus shuttle bus schedules or mall transportation fares.",
+    "supporting_section": "None",
+    "category": "out_of_scope",
+    "answerable": false
+  },
+  {
+    "id": "eval_090",
+    "question": "What are the patent royalty sharing percentages between AIT and student inventors for commercialized hardware?",
+    "ground_truth": "The handbook mentions IPR as a course category (HSM) but contains no institutional patent royalty sharing formula.",
+    "supporting_section": "None",
+    "category": "out_of_scope",
+    "answerable": false
+  },
+  {
+    "id": "eval_091",
+    "question": "Since the Director has statutory power to condone attendance down to 50% for special medical reasons, what petition form do I submit?",
+    "ground_truth": "False premise. Under Section 3.3, under no circumstances may any authority, including the Director or Academic Council, condone attendance below 60.0%. An attendance below 60% leads to a mandatory 'W' grade.",
+    "supporting_section": "Section 3.3: Strict Condonation Exceptions and Disclaimers",
+    "category": "adversarial",
+    "answerable": false
+  },
+  {
+    "id": "eval_092",
+    "question": "How can I pay my Autumn semester tuition fee by submitting a physical demand draft at the Finance Office counter?",
+    "ground_truth": "False premise. Under Section 5.1, cash and physical demand drafts are strictly prohibited. All fee payments must be remitted exclusively online via the AIT Payment Gateway on the SIP portal.",
+    "supporting_section": "Section 5.1: Annual Tuition and Institutional Fee Schedule",
+    "category": "adversarial",
+    "answerable": false
+  },
+  {
+    "id": "eval_093",
+    "question": "Because re-evaluation always alters your grade regardless of the mark difference, how long does the grade update take?",
+    "ground_truth": "False premise. Re-evaluation does not always alter the grade. Under Section 4.4, the grade replaces the original if and only if the mark difference is >= 5.0 marks. If the difference is < 5.0 marks, the original grade remains unchanged.",
+    "supporting_section": "Section 4.4: Supplementary Examinations and Re-evaluation Protocol",
+    "category": "adversarial",
+    "answerable": false
+  },
+  {
+    "id": "eval_094",
+    "question": "Which form should a student fill out to drop a Professional Core Course during the 10-day add/drop period?",
+    "ground_truth": "False premise. Under Section 2.2, Professional Core Courses cannot be dropped under any circumstances. Only elective courses may be added or dropped.",
+    "supporting_section": "Section 2.2: Course Registration Guidelines and Credit Limits",
+    "category": "adversarial",
+    "answerable": false
+  },
+  {
+    "id": "eval_095",
+    "question": "Since supplementary examinations allow students to score an Outstanding 'O' grade (10.0), what is the study strategy advised?",
+    "ground_truth": "False premise. Under Section 4.4, the maximum attainable grade in a supplementary examination is strictly capped at 'A' (8.0 grade points); grade 'O' or 'A+' cannot be awarded.",
+    "supporting_section": "Section 4.4: Supplementary Examinations and Re-evaluation Protocol",
+    "category": "adversarial",
+    "answerable": false
+  },
+  {
+    "id": "eval_096",
+    "question": "Where can a student submit a retrospective mess rebate claim 10 days after returning from home?",
+    "ground_truth": "False premise. Under Section 6.2, post-facto or retrospective rebate claims are categorically rejected. Mess rebate applications must be submitted at least 48 hours in advance of departure.",
+    "supporting_section": "Section 6.2: Mess Regulations and Dining Rebate Policy",
+    "category": "adversarial",
+    "answerable": false
+  },
+  {
+    "id": "eval_097",
+    "question": "If a student living 50 km away wishes to commute daily as a day-scholar, what exemption waiver can they obtain from the hostel warden?",
+    "ground_truth": "False premise. Under Section 6.1, hostel residency is optional only for students residing within a 25-kilometer radius of campus. For all other undergraduate students, residency is compulsory.",
+    "supporting_section": "Section 6.1: Hostel Accommodation Allotment and Amenities",
+    "category": "adversarial",
+    "answerable": false
+  },
+  {
+    "id": "eval_098",
+    "question": "How can a student on Academic Probation with a 4.20 CGPA apply to register for 26 credits to clear backlogs faster?",
+    "ground_truth": "False premise. Under Section 2.2, a student on Academic Probation (CGPA < 5.00) is restricted to a reduced credit load of 12.0 to 16.0 credits and is legally prohibited from overloading.",
+    "supporting_section": "Section 2.2: Course Registration Guidelines and Credit Limits",
+    "category": "adversarial",
+    "answerable": false
+  },
+  {
+    "id": "eval_099",
+    "question": "How can a student borrow reference handbooks and rare encyclopedias to take back to their hostel room over the weekend?",
+    "ground_truth": "False premise. Under Section 8.1, hardbound encyclopedias, reference handbooks, and rare editions can only be consulted inside the library reading halls and are strictly non-circulating.",
+    "supporting_section": "Section 8.1: Central Library Circulation Rules",
+    "category": "adversarial",
+    "answerable": false
+  },
+  {
+    "id": "eval_100",
+    "question": "Since students caught using notes in an exam under UMC Category B are allowed to appear in summer supplementary exams, when is the application deadline?",
+    "ground_truth": "False premise. Under Section 9.2, students penalised under UMC Category B are expressly debarred from registering for or appearing in the subsequent summer supplementary term.",
+    "supporting_section": "Section 9.2: Examination Malpractice and Unfair Means Code (UMC)",
+    "category": "adversarial",
+    "answerable": false
+  },
+  {
+    "id": "eval_101",
+    "question": "Why is late course registration allowed up to 20 working days after the semester starts?",
+    "ground_truth": "False premise. Under Section 2.2, course registration is strictly prohibited after the 10th working day from semester commencement under all circumstances.",
+    "supporting_section": "Section 2.2: Course Registration Guidelines and Credit Limits",
+    "category": "adversarial",
+    "answerable": false
+  },
+  {
+    "id": "eval_102",
+    "question": "Since parents can authorize an undergraduate student to mine Bitcoin on the HPC cluster, which consent form is submitted?",
+    "ground_truth": "False premise. Under Section 8.2, mining cryptocurrencies on institutional servers is strictly prohibited regardless of parental consent and results in computing revocation and academic suspension.",
+    "supporting_section": "Section 8.2: Acceptable Use Policy for High-Performance Computing (HPC) Clusters",
+    "category": "adversarial",
+    "answerable": false
+  },
+  {
+    "id": "eval_103",
+    "question": "How can a capstone project with a 45% Turnitin plagiarism similarity be defended in the current semester after paying a fine?",
+    "ground_truth": "False premise. Under Section 9.1, a 45% similarity is Level 2 plagiarism; the student is disqualified from defending the project in the current semester and cannot clear it by paying a fine.",
+    "supporting_section": "Section 9.1: Plagiarism Limits in Capstone Projects and Theses",
+    "category": "adversarial",
+    "answerable": false
+  },
+  {
+    "id": "eval_104",
+    "question": "What is the procedure for an MCM scholarship recipient to receive retroactive arrears for the semester in which their scholarship was suspended?",
+    "ground_truth": "False premise. Under Section 7.4, when a suspended scholarship is reinstated after restoring CGPA, it is reinstated strictly without retroactive arrears.",
+    "supporting_section": "Section 7.4: Scholarship Retention and Revocation Rules",
+    "category": "adversarial",
+    "answerable": false
+  },
+  {
+    "id": "eval_105",
+    "question": "How many days beyond the 20-day limit can a student claim mess dining rebate if they have a signed letter from their local guardian?",
+    "ground_truth": "False premise. Under Section 6.2, the maximum aggregate mess rebate allowable in any single semester is strictly 20 calendar days; guardian letters cannot override this cap.",
+    "supporting_section": "Section 6.2: Mess Regulations and Dining Rebate Policy",
+    "category": "adversarial",
+    "answerable": false
+  }
+]
