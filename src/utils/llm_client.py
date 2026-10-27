@@ -204,20 +204,92 @@ class LLMClient:
     def _mock_completion(self, prompt: str, system_prompt: str | None) -> tuple[str, int, int]:
         """
         Generates realistic domain-grounded responses when running without live API keys.
+        Supports both Judge evaluations and context-aware RAG extraction.
         """
+        import re
+        import json
+
         p_lower = prompt.lower()
-        if "attendance" in p_lower and "condonation" in p_lower:
-            text = "Under Section 3.2, medical attendance condonation between 65.0% and 74.9% requires submitting Form M-2 signed by the Chief Medical Officer within 7 days and a fee of ₹1,500 per course (capped at ₹5,000 per semester)."
+        sys_lower = (system_prompt or "").lower()
+
+        # 1. Handle Judge LLM prompts
+        if "impartial, expert academic judge" in sys_lower:
+            gt_match = re.search(r"Reference Ground Truth:\s*(.*?)\n", prompt, re.DOTALL)
+            pred_match = re.search(r"Generated Answer:\s*(.*?)\n\n", prompt, re.DOTALL)
+            ans_match = re.search(r"Answerable:\s*(True|False)", prompt)
+            is_ans = ans_match.group(1) == "True" if ans_match else True
+
+            gt_text = gt_match.group(1).strip() if gt_match else ""
+            pred_text = pred_match.group(1).strip() if pred_match else ""
+
+            if not is_ans:
+                refused = any(
+                    w in pred_text.lower()
+                    for w in ["insufficient information", "outside", "not covered", "false premise", "refuse", "not documented", "cannot be answered"]
+                )
+                f = 1 if refused else 0
+                c = 1 if refused else 0
+                a = 1 if refused else 0
+                reason = "Correctly abstained on unanswerable query" if refused else "Failed to abstain and generated ungrounded answer"
+            else:
+                gt_words = set(re.findall(r"\b\w{3,}\b", gt_text.lower()))
+                pred_words = set(re.findall(r"\b\w{3,}\b", pred_text.lower()))
+                overlap = len(gt_words.intersection(pred_words))
+                c = 1 if (overlap >= 2 or (len(pred_words) >= 5 and overlap / max(1, len(gt_words)) >= 0.20)) else 0
+                f = c
+                a = 1
+                reason = "Grounded answer matching handbook ground truth" if c else "Prediction does not entail expected ground truth facts"
+
+            judge_json = json.dumps({"faithfulness": f, "correctness": c, "abstention_correct": a, "reasoning": reason})
+            return judge_json, len(prompt.split()), len(judge_json.split())
+
+        # 2. Handle RAG completions containing Context Excerpts
+        if "context excerpts" in p_lower:
+            calc_match = re.search(r"Deterministic Calculation Result:\s*([^\n]+)", prompt)
+            calc_part = f"Deterministic calculation yields: {calc_match.group(1)}. " if calc_match else ""
+
+            ctx_start = prompt.find("Context Excerpts")
+            q_start = prompt.find("Student Inquiry:") if "Student Inquiry:" in prompt else prompt.find("Student Question:")
+            ctx_body = prompt[ctx_start:q_start] if q_start != -1 else prompt[ctx_start:]
+            q_body = prompt[q_start:] if q_start != -1 else prompt
+
+            sentences = [
+                s.strip()
+                for s in re.split(r"[\n\.]+", ctx_body)
+                if len(s.strip()) > 15 and not s.strip().startswith("---") and not s.strip().startswith("|")
+            ]
+            q_words = set(re.findall(r"\b\w{4,}\b", q_body.lower()))
+
+            best_sentence = ""
+            best_score = -1
+            for s in sentences:
+                s_words = set(re.findall(r"\b\w{4,}\b", s.lower()))
+                score = len(q_words.intersection(s_words))
+                if score > best_score:
+                    best_score = score
+                    best_sentence = s
+
+            sec_match = re.search(r"Section\s+[\d\.]+[^\n\]]*", ctx_body)
+            sec_tag = f"[{sec_match.group(0)}] " if sec_match else ""
+
+            if best_sentence and best_score >= 1:
+                text = f"{sec_tag}{calc_part}{best_sentence}."
+            elif calc_part:
+                text = f"{sec_tag}{calc_part}According to official AIT regulations."
+            else:
+                text = "Based on the provided student handbook excerpts, I do not have sufficient information to answer this question."
+
+            return text, len(prompt.split()), len(text.split())
+
+        # 3. Handle Zero-shot Prompting fallback (System A)
+        if "attendance" in p_lower and "minimum" in p_lower:
+            text = "Under AIT regulations, the minimum attendance required is 75.0%."
         elif "curfew" in p_lower:
-            text = "According to Section 6.3, weekday hostel curfew is strictly 9:30 PM, and weekend curfew is 10:30 PM, with 3 grace late slips allowed per semester."
-        elif "tuition" in p_lower or "fee" in p_lower:
-            text = "Under Section 5.1 and 5.2, Autumn semester fee is ₹1,20,500 due on July 15th by 5:00 PM. Delayed payment incurs late fines."
+            text = "Hostel curfew is strictly 9:30 PM on weekdays and 10:30 PM on weekends."
         elif "swimming pool" in p_lower or "stipend" in p_lower or "ph.d." in p_lower or "unanswerable" in p_lower or "out of scope" in p_lower:
-            text = "Based on the provided excerpts, I do not have sufficient information to answer this question as it is outside the scope of the student handbook."
+            text = "I do not have sufficient information to answer this question as it is outside the scope of the student handbook."
         elif "director" in p_lower and "50%" in p_lower:
             text = "False premise. Under Section 3.3, under no circumstances may any authority, including the Director, condone attendance below 60.0%."
-        elif "context" in p_lower:
-            text = "Based on the provided student handbook excerpts, the requested policy is explicitly documented."
         else:
             text = "According to the Apex Institute of Technology academic code, students must adhere to standard academic requirements."
 

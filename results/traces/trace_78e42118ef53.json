@@ -3,8 +3,8 @@
   "iterations_used": 2,
   "max_iterations_allowed": 4,
   "is_abstaining": false,
-  "latency_seconds": 0.0157,
-  "total_tokens": 702,
+  "latency_seconds": 0.0167,
+  "total_tokens": 685,
   "retrieved_chunks_count": 3,
   "calculation_results": [],
   "tool_history": [
@@ -28,5 +28,5 @@
       "event": "Final answer synthesized"
     }
   ],
-  "final_answer": "Under Section 3.2, medical attendance condonation between 65.0% and 74.9% requires submitting Form M-2 signed by the Chief Medical Officer within 7 days and a fee of \u20b91,500 per course (capped at \u20b95,000 per semester)."
+  "final_answer": "[Section 3.3: Strict Condonation Exceptions and Disclaimers] [CHAPTER 3: ATTENDANCE RULES, LEAVE REGULATIONS, AND CONDONATION - Section 3."
 }

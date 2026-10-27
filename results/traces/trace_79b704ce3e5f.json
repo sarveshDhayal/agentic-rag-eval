@@ -3,8 +3,8 @@
   "iterations_used": 3,
   "max_iterations_allowed": 4,
   "is_abstaining": false,
-  "latency_seconds": 0.0094,
-  "total_tokens": 815,
+  "latency_seconds": 0.0098,
+  "total_tokens": 832,
   "retrieved_chunks_count": 3,
   "calculation_results": [
     {
@@ -45,5 +45,5 @@
       "event": "Final answer synthesized"
     }
   ],
-  "final_answer": "According to Section 6.3, weekday hostel curfew is strictly 9:30 PM, and weekend curfew is 10:30 PM, with 3 grace late slips allowed per semester."
+  "final_answer": "[Section 5.2: Due Dates, Late Fine Slabs, and Deregistration] Deterministic calculation yields: 2500 + (6 * 100) = 3100. Every student is allotted a maximum quota of **3 Grace Late Slips per academic semester** for entry up to 60 minutes after curfew."
 }

@@ -31,6 +31,8 @@ models/
 adapters/
 *.sqlite
 results/.llm_cache.sqlite
+results/traces/*
+!results/traces/.gitkeep
 
 # OS-specific
 .DS_Store

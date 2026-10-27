@@ -184,3 +184,4 @@ if __name__ == "__main__":
     print("Q1:", res1.query)
     print("A1:", res1.response)
     print(f"Metadata: {res1.metadata}")
+
