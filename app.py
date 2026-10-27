@@ -28,7 +28,6 @@ from src.systems.system_a_prompting import SystemAPrompting
 from src.systems.system_b_finetuned import SystemBFinetuned
 from src.systems.system_c_rag import SystemCRAG
 from src.systems.system_d_agentic import SystemDAgentic
-from src.utils.config_loader import load_config
 
 # Page configuration
 st.set_page_config(

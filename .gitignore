@@ -38,9 +38,10 @@ results/traces/*
 .DS_Store
 Thumbs.db
 
-# IDEs
+# IDEs and Agent tooling
 .idea/
 .vscode/
+.agents/
 *.swp
 *.swo
 
