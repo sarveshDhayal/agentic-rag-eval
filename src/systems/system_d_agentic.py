@@ -448,3 +448,4 @@ if __name__ == "__main__":
     print("Agent Question:", res.query)
     print("Agent Answer:\n", res.response)
     print(f"Iterations: {res.metadata['iterations_used']} | Latency: {res.latency_seconds:.3f}s | Tokens: {res.total_tokens}")
+
